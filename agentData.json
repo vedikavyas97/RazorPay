@@ -1,0 +1,2566 @@
+{
+ "apps": [
+  {
+   "application_id": "A3001",
+   "business_type": "Partnership",
+   "industry": "Gifting & Festive",
+   "city": "Surat",
+   "preferred_language": "Marathi",
+   "signup_date": "24 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 12.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 38,
+   "attempts": 2,
+   "support_contacts": 2,
+   "rejection_code": "R02",
+   "rejection_message": "GST certificate could not be validated against GSTIN entered"
+  },
+  {
+   "application_id": "A3002",
+   "business_type": "Private Limited",
+   "industry": "Travel & Hospitality",
+   "city": "Indore",
+   "preferred_language": "Hinglish",
+   "signup_date": "08 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 37.0,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 11,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3003",
+   "business_type": "Trust / NGO",
+   "industry": "Electronics",
+   "city": "Mumbai",
+   "preferred_language": "English",
+   "signup_date": "04 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 2.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 7,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3004",
+   "business_type": "Proprietorship",
+   "industry": "Health & Pharmacy",
+   "city": "Lucknow",
+   "preferred_language": "Hindi",
+   "signup_date": "25 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 7.7,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 3,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "R01",
+   "rejection_message": "PAN ka naam aur application ka naam match nahi kar raha"
+  },
+  {
+   "application_id": "A3005",
+   "business_type": "LLP",
+   "industry": "Education / Coaching",
+   "city": "Bengaluru",
+   "preferred_language": "English",
+   "signup_date": "29 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 29.3,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 19,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3006",
+   "business_type": "Private Limited",
+   "industry": "Education / Coaching",
+   "city": "Mumbai",
+   "preferred_language": "Tamil",
+   "signup_date": "23 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 24.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 16,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3007",
+   "business_type": "Proprietorship",
+   "industry": "Education / Coaching",
+   "city": "Lucknow",
+   "preferred_language": "Tamil",
+   "signup_date": "03 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 1.3,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 21,
+   "attempts": 2,
+   "support_contacts": 1,
+   "rejection_code": "R09",
+   "rejection_message": "Signatory ka ID proof upload nahi hua"
+  },
+  {
+   "application_id": "A3008",
+   "business_type": "LLP",
+   "industry": "Apparel & Fashion",
+   "city": "Hyderabad",
+   "preferred_language": "Hindi",
+   "signup_date": "22 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 29.8,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 21,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3009",
+   "business_type": "Proprietorship",
+   "industry": "Electronics",
+   "city": "Kochi",
+   "preferred_language": "Tamil",
+   "signup_date": "21 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 7.5,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 30,
+   "attempts": 4,
+   "support_contacts": 0,
+   "rejection_code": "R02",
+   "rejection_message": "GST number galat hai ya certificate purana hai"
+  },
+  {
+   "application_id": "A3010",
+   "business_type": "Proprietorship",
+   "industry": "Apparel & Fashion",
+   "city": "Surat",
+   "preferred_language": "English",
+   "signup_date": "02 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 6.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Stalled",
+   "days_since_last_activity": 19,
+   "attempts": 2,
+   "support_contacts": 1,
+   "rejection_code": "R06",
+   "rejection_message": "Missing policy pages (T&C / refund / contact) on website"
+  },
+  {
+   "application_id": "A3011",
+   "business_type": "Proprietorship",
+   "industry": "Grocery & Food",
+   "city": "Kolkata",
+   "preferred_language": "Hindi",
+   "signup_date": "10 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 7.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 9,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3012",
+   "business_type": "Proprietorship",
+   "industry": "Health & Pharmacy",
+   "city": "Lucknow",
+   "preferred_language": "Hinglish",
+   "signup_date": "13 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 5.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 3,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "R03",
+   "rejection_message": "Bank account holder name does not match PAN / business name"
+  },
+  {
+   "application_id": "A3013",
+   "business_type": "Private Limited",
+   "industry": "Grocery & Food",
+   "city": "Chennai",
+   "preferred_language": "English",
+   "signup_date": "12 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 42.4,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 13,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3014",
+   "business_type": "Proprietorship",
+   "industry": "Health & Pharmacy",
+   "city": "Kolkata",
+   "preferred_language": "Hindi",
+   "signup_date": "14 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 7.9,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Business details",
+   "application_status": "Stalled",
+   "days_since_last_activity": 22,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3015",
+   "business_type": "LLP",
+   "industry": "Health & Pharmacy",
+   "city": "Chandigarh",
+   "preferred_language": "English",
+   "signup_date": "09 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 3.3,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Website/App review",
+   "application_status": "Stalled",
+   "days_since_last_activity": 4,
+   "attempts": 3,
+   "support_contacts": 2,
+   "rejection_code": "R11",
+   "rejection_message": "Business category selected differs from website content"
+  },
+  {
+   "application_id": "A3016",
+   "business_type": "Partnership",
+   "industry": "Fitness & Sports",
+   "city": "Bengaluru",
+   "preferred_language": "Hindi",
+   "signup_date": "22 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 24.1,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 37,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "R05",
+   "rejection_message": "Document clear nahi hai, dobara upload karein"
+  },
+  {
+   "application_id": "A3017",
+   "business_type": "Proprietorship",
+   "industry": "Beauty & Wellness",
+   "city": "Surat",
+   "preferred_language": "Hinglish",
+   "signup_date": "26 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 1.2,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 29,
+   "attempts": 2,
+   "support_contacts": 0,
+   "rejection_code": "R01",
+   "rejection_message": "PAN name does not match business name on application"
+  },
+  {
+   "application_id": "A3018",
+   "business_type": "Private Limited",
+   "industry": "Home & Furniture",
+   "city": "Chandigarh",
+   "preferred_language": "English",
+   "signup_date": "07 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 34.9,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Website/App review",
+   "application_status": "Stalled",
+   "days_since_last_activity": 4,
+   "attempts": 1,
+   "support_contacts": 2,
+   "rejection_code": "R06",
+   "rejection_message": "Missing policy pages (T&C / refund / contact) on website"
+  },
+  {
+   "application_id": "A3019",
+   "business_type": "Proprietorship",
+   "industry": "Books & Stationery",
+   "city": "Bengaluru",
+   "preferred_language": "Hinglish",
+   "signup_date": "17 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 1.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Stalled",
+   "days_since_last_activity": 18,
+   "attempts": 2,
+   "support_contacts": 1,
+   "rejection_code": "R07",
+   "rejection_message": "Website khul nahi raha hai"
+  },
+  {
+   "application_id": "A3020",
+   "business_type": "Proprietorship",
+   "industry": "SaaS / Digital Services",
+   "city": "Mumbai",
+   "preferred_language": "Kannada",
+   "signup_date": "03 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 4.5,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Stalled",
+   "days_since_last_activity": 11,
+   "attempts": 4,
+   "support_contacts": 0,
+   "rejection_code": "R06",
+   "rejection_message": "Website pe refund policy aur privacy policy nahi hai"
+  },
+  {
+   "application_id": "A3021",
+   "business_type": "Proprietorship",
+   "industry": "Gifting & Festive",
+   "city": "Indore",
+   "preferred_language": "Hindi",
+   "signup_date": "19 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 6.6,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 40,
+   "attempts": 4,
+   "support_contacts": 1,
+   "rejection_code": "R04",
+   "rejection_message": "IFSC/account number invalid or account inactive"
+  },
+  {
+   "application_id": "A3022",
+   "business_type": "Private Limited",
+   "industry": "Health & Pharmacy",
+   "city": "Kochi",
+   "preferred_language": "English",
+   "signup_date": "28 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 51.0,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 28,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": "Doc blurred and cropped, cannot verify"
+  },
+  {
+   "application_id": "A3023",
+   "business_type": "Private Limited",
+   "industry": "Home & Furniture",
+   "city": "Mumbai",
+   "preferred_language": "Kannada",
+   "signup_date": "13 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 59.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 35,
+   "attempts": 3,
+   "support_contacts": 3,
+   "rejection_code": "R09",
+   "rejection_message": "Signatory ka ID proof upload nahi hua"
+  },
+  {
+   "application_id": "A3024",
+   "business_type": "Proprietorship",
+   "industry": "Travel & Hospitality",
+   "city": "Jaipur",
+   "preferred_language": "Tamil",
+   "signup_date": "16 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 4.4,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 0,
+   "attempts": 2,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3025",
+   "business_type": "Proprietorship",
+   "industry": "Education / Coaching",
+   "city": "Chandigarh",
+   "preferred_language": "Hinglish",
+   "signup_date": "08 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 0.7,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 5,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "R04",
+   "rejection_message": "Bank verify nahi hua, account number dobara daalein"
+  },
+  {
+   "application_id": "A3026",
+   "business_type": "Proprietorship",
+   "industry": "Grocery & Food",
+   "city": "Pune",
+   "preferred_language": "Tamil",
+   "signup_date": "17 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 0.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 27,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3027",
+   "business_type": "Proprietorship",
+   "industry": "Home & Furniture",
+   "city": "Ahmedabad",
+   "preferred_language": "Hinglish",
+   "signup_date": "30 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 6.0,
+   "whatsapp_opted_in": "No",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 27,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "R01",
+   "rejection_message": "PAN name does not match business name on application"
+  },
+  {
+   "application_id": "A3028",
+   "business_type": "Proprietorship",
+   "industry": "Travel & Hospitality",
+   "city": "Indore",
+   "preferred_language": "English",
+   "signup_date": "18 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 6.1,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 13,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": "PAN ka naam aur application ka naam match nahi kar raha"
+  },
+  {
+   "application_id": "A3029",
+   "business_type": "Private Limited",
+   "industry": "Fitness & Sports",
+   "city": "Kochi",
+   "preferred_language": "Marathi",
+   "signup_date": "05 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 21.9,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Business details",
+   "application_status": "Stalled",
+   "days_since_last_activity": 20,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3030",
+   "business_type": "Partnership",
+   "industry": "Home & Furniture",
+   "city": "Delhi NCR",
+   "preferred_language": "English",
+   "signup_date": "15 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 2.2,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Business details",
+   "application_status": "Stalled",
+   "days_since_last_activity": 34,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3031",
+   "business_type": "Private Limited",
+   "industry": "Books & Stationery",
+   "city": "Ahmedabad",
+   "preferred_language": "Hinglish",
+   "signup_date": "06 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 43.3,
+   "whatsapp_opted_in": "No",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 4,
+   "attempts": 1,
+   "support_contacts": 2,
+   "rejection_code": "R02",
+   "rejection_message": "GST number galat hai ya certificate purana hai"
+  },
+  {
+   "application_id": "A3032",
+   "business_type": "Partnership",
+   "industry": "Gifting & Festive",
+   "city": "Delhi NCR",
+   "preferred_language": "Hinglish",
+   "signup_date": "15 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 4.3,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 3,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3033",
+   "business_type": "Private Limited",
+   "industry": "Apparel & Fashion",
+   "city": "Mumbai",
+   "preferred_language": "English",
+   "signup_date": "28 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 50.6,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Stalled",
+   "days_since_last_activity": 11,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "R06",
+   "rejection_message": "Website pe refund policy aur privacy policy nahi hai"
+  },
+  {
+   "application_id": "A3034",
+   "business_type": "Partnership",
+   "industry": "Books & Stationery",
+   "city": "Bengaluru",
+   "preferred_language": "Hinglish",
+   "signup_date": "16 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 13.1,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 20,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3035",
+   "business_type": "LLP",
+   "industry": "Travel & Hospitality",
+   "city": "Surat",
+   "preferred_language": "English",
+   "signup_date": "20 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 24.6,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 2,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3036",
+   "business_type": "Partnership",
+   "industry": "Home & Furniture",
+   "city": "Delhi NCR",
+   "preferred_language": "Hinglish",
+   "signup_date": "17 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 10.2,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 16,
+   "attempts": 2,
+   "support_contacts": 0,
+   "rejection_code": "R01",
+   "rejection_message": "PAN ka naam aur application ka naam match nahi kar raha"
+  },
+  {
+   "application_id": "A3037",
+   "business_type": "Private Limited",
+   "industry": "Education / Coaching",
+   "city": "Jaipur",
+   "preferred_language": "Hinglish",
+   "signup_date": "17 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 19.3,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 3,
+   "attempts": 2,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3038",
+   "business_type": "Proprietorship",
+   "industry": "Grocery & Food",
+   "city": "Delhi NCR",
+   "preferred_language": "English",
+   "signup_date": "05 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 4.7,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 31,
+   "attempts": 1,
+   "support_contacts": 2,
+   "rejection_code": "R01",
+   "rejection_message": "Name on PAN card and business name different, pls check"
+  },
+  {
+   "application_id": "A3039",
+   "business_type": "Proprietorship",
+   "industry": "Gifting & Festive",
+   "city": "Mumbai",
+   "preferred_language": "English",
+   "signup_date": "15 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 5.4,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Rejected",
+   "days_since_last_activity": 25,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "R10",
+   "rejection_message": "Declared products fall under restricted category"
+  },
+  {
+   "application_id": "A3040",
+   "business_type": "Trust / NGO",
+   "industry": "Beauty & Wellness",
+   "city": "Kochi",
+   "preferred_language": "Tamil",
+   "signup_date": "03 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 1.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 5,
+   "attempts": 3,
+   "support_contacts": 2,
+   "rejection_code": "R03",
+   "rejection_message": "Account name mismatch. Please provide bank letter"
+  },
+  {
+   "application_id": "A3041",
+   "business_type": "Proprietorship",
+   "industry": "Fitness & Sports",
+   "city": "Hyderabad",
+   "preferred_language": "English",
+   "signup_date": "13 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 5.3,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Stalled",
+   "days_since_last_activity": 39,
+   "attempts": 3,
+   "support_contacts": 0,
+   "rejection_code": "R07",
+   "rejection_message": "Website khul nahi raha hai"
+  },
+  {
+   "application_id": "A3042",
+   "business_type": "Trust / NGO",
+   "industry": "Apparel & Fashion",
+   "city": "Jaipur",
+   "preferred_language": "English",
+   "signup_date": "15 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 5.4,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 13,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3043",
+   "business_type": "Proprietorship",
+   "industry": "Health & Pharmacy",
+   "city": "Chennai",
+   "preferred_language": "Hindi",
+   "signup_date": "25 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 3.7,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 10,
+   "attempts": 4,
+   "support_contacts": 2,
+   "rejection_code": "R03",
+   "rejection_message": "Bank account ka naam business se alag hai"
+  },
+  {
+   "application_id": "A3044",
+   "business_type": "Private Limited",
+   "industry": "Beauty & Wellness",
+   "city": "Bengaluru",
+   "preferred_language": "Hindi",
+   "signup_date": "25 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 10.1,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 11,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3045",
+   "business_type": "Partnership",
+   "industry": "Beauty & Wellness",
+   "city": "Chennai",
+   "preferred_language": "English",
+   "signup_date": "23 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 5.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 15,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3046",
+   "business_type": "Proprietorship",
+   "industry": "Beauty & Wellness",
+   "city": "Bengaluru",
+   "preferred_language": "Kannada",
+   "signup_date": "23 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 7.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 33,
+   "attempts": 3,
+   "support_contacts": 0,
+   "rejection_code": "R04",
+   "rejection_message": "IFSC/account number invalid or account inactive"
+  },
+  {
+   "application_id": "A3047",
+   "business_type": "Private Limited",
+   "industry": "Electronics",
+   "city": "Bengaluru",
+   "preferred_language": "English",
+   "signup_date": "14 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 15.2,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Stalled",
+   "days_since_last_activity": 38,
+   "attempts": 3,
+   "support_contacts": 3,
+   "rejection_code": "R06",
+   "rejection_message": "Missing policy pages (T&C / refund / contact) on website"
+  },
+  {
+   "application_id": "A3048",
+   "business_type": "Private Limited",
+   "industry": "Electronics",
+   "city": "Chennai",
+   "preferred_language": "Hindi",
+   "signup_date": "18 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 53.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 2,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3049",
+   "business_type": "Partnership",
+   "industry": "Apparel & Fashion",
+   "city": "Delhi NCR",
+   "preferred_language": "Hinglish",
+   "signup_date": "24 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 22.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 20,
+   "attempts": 1,
+   "support_contacts": 2,
+   "rejection_code": "R02",
+   "rejection_message": "GSTIN inactive / legal name mismatch with application"
+  },
+  {
+   "application_id": "A3050",
+   "business_type": "LLP",
+   "industry": "Health & Pharmacy",
+   "city": "Kolkata",
+   "preferred_language": "Kannada",
+   "signup_date": "18 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 25.6,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Business details",
+   "application_status": "Stalled",
+   "days_since_last_activity": 13,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3051",
+   "business_type": "Proprietorship",
+   "industry": "Travel & Hospitality",
+   "city": "Mumbai",
+   "preferred_language": "Hinglish",
+   "signup_date": "23 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 4.3,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Rejected",
+   "days_since_last_activity": 23,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": "Business category not supported by policy"
+  },
+  {
+   "application_id": "A3052",
+   "business_type": "Partnership",
+   "industry": "Education / Coaching",
+   "city": "Surat",
+   "preferred_language": "English",
+   "signup_date": "26 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 11.9,
+   "whatsapp_opted_in": "No",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 29,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3053",
+   "business_type": "Proprietorship",
+   "industry": "Beauty & Wellness",
+   "city": "Delhi NCR",
+   "preferred_language": "Hindi",
+   "signup_date": "08 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 4.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 38,
+   "attempts": 1,
+   "support_contacts": 2,
+   "rejection_code": "R01",
+   "rejection_message": "Name on PAN card and business name different, pls check"
+  },
+  {
+   "application_id": "A3054",
+   "business_type": "LLP",
+   "industry": "Fitness & Sports",
+   "city": "Indore",
+   "preferred_language": "Tamil",
+   "signup_date": "21 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 27.7,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Business details",
+   "application_status": "Stalled",
+   "days_since_last_activity": 9,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3055",
+   "business_type": "Proprietorship",
+   "industry": "Home & Furniture",
+   "city": "Hyderabad",
+   "preferred_language": "English",
+   "signup_date": "08 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 3.2,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 5,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3056",
+   "business_type": "Partnership",
+   "industry": "Health & Pharmacy",
+   "city": "Jaipur",
+   "preferred_language": "Marathi",
+   "signup_date": "10 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 8.3,
+   "whatsapp_opted_in": "No",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 14,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3057",
+   "business_type": "Proprietorship",
+   "industry": "Beauty & Wellness",
+   "city": "Ahmedabad",
+   "preferred_language": "Tamil",
+   "signup_date": "02 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 1.1,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 7,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "R02",
+   "rejection_message": "GST certificate could not be validated against GSTIN entered"
+  },
+  {
+   "application_id": "A3058",
+   "business_type": "Private Limited",
+   "industry": "Books & Stationery",
+   "city": "Surat",
+   "preferred_language": "Hinglish",
+   "signup_date": "03 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 44.8,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 3,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3059",
+   "business_type": "Proprietorship",
+   "industry": "Fitness & Sports",
+   "city": "Mumbai",
+   "preferred_language": "Tamil",
+   "signup_date": "10 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 7.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 3,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3060",
+   "business_type": "Partnership",
+   "industry": "Travel & Hospitality",
+   "city": "Bengaluru",
+   "preferred_language": "Hindi",
+   "signup_date": "21 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 17.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 8,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3061",
+   "business_type": "Proprietorship",
+   "industry": "Apparel & Fashion",
+   "city": "Hyderabad",
+   "preferred_language": "English",
+   "signup_date": "07 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 5.6,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 0,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3062",
+   "business_type": "Proprietorship",
+   "industry": "Gifting & Festive",
+   "city": "Hyderabad",
+   "preferred_language": "Hinglish",
+   "signup_date": "30 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 4.1,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 10,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3063",
+   "business_type": "Partnership",
+   "industry": "Home & Furniture",
+   "city": "Pune",
+   "preferred_language": "English",
+   "signup_date": "24 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 14.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 9,
+   "attempts": 2,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3064",
+   "business_type": "Proprietorship",
+   "industry": "Apparel & Fashion",
+   "city": "Chandigarh",
+   "preferred_language": "Tamil",
+   "signup_date": "21 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 5.7,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 23,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "R05",
+   "rejection_message": "Document not readable. Resubmit"
+  },
+  {
+   "application_id": "A3065",
+   "business_type": "Proprietorship",
+   "industry": "SaaS / Digital Services",
+   "city": "Kochi",
+   "preferred_language": "English",
+   "signup_date": "15 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 7.7,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 1,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3066",
+   "business_type": "LLP",
+   "industry": "Gifting & Festive",
+   "city": "Hyderabad",
+   "preferred_language": "Hindi",
+   "signup_date": "11 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 13.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 14,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3067",
+   "business_type": "LLP",
+   "industry": "Fitness & Sports",
+   "city": "Indore",
+   "preferred_language": "English",
+   "signup_date": "01 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 22.8,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 13,
+   "attempts": 2,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3068",
+   "business_type": "Private Limited",
+   "industry": "Fitness & Sports",
+   "city": "Chennai",
+   "preferred_language": "English",
+   "signup_date": "25 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 25.6,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 4,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "R04",
+   "rejection_message": "Bank verify nahi hua, account number dobara daalein"
+  },
+  {
+   "application_id": "A3069",
+   "business_type": "Private Limited",
+   "industry": "Fitness & Sports",
+   "city": "Jaipur",
+   "preferred_language": "Hindi",
+   "signup_date": "14 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 58.6,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 11,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3070",
+   "business_type": "Proprietorship",
+   "industry": "Books & Stationery",
+   "city": "Delhi NCR",
+   "preferred_language": "Hinglish",
+   "signup_date": "23 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 4.9,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 19,
+   "attempts": 3,
+   "support_contacts": 0,
+   "rejection_code": "R03",
+   "rejection_message": "Bank account holder name does not match PAN / business name"
+  },
+  {
+   "application_id": "A3071",
+   "business_type": "Proprietorship",
+   "industry": "Health & Pharmacy",
+   "city": "Pune",
+   "preferred_language": "English",
+   "signup_date": "30 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 1.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Business details",
+   "application_status": "Stalled",
+   "days_since_last_activity": 5,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3072",
+   "business_type": "Proprietorship",
+   "industry": "Grocery & Food",
+   "city": "Mumbai",
+   "preferred_language": "Hinglish",
+   "signup_date": "15 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 2.0,
+   "whatsapp_opted_in": "No",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 13,
+   "attempts": 3,
+   "support_contacts": 0,
+   "rejection_code": "R08",
+   "rejection_message": "Address on proof does not match application address"
+  },
+  {
+   "application_id": "A3073",
+   "business_type": "Private Limited",
+   "industry": "Grocery & Food",
+   "city": "Chandigarh",
+   "preferred_language": "Tamil",
+   "signup_date": "05 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 22.5,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Rejected",
+   "days_since_last_activity": 15,
+   "attempts": 2,
+   "support_contacts": 0,
+   "rejection_code": "R10",
+   "rejection_message": "Declared products fall under restricted category"
+  },
+  {
+   "application_id": "A3074",
+   "business_type": "Partnership",
+   "industry": "Electronics",
+   "city": "Surat",
+   "preferred_language": "Hinglish",
+   "signup_date": "25 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 18.7,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Business details",
+   "application_status": "Stalled",
+   "days_since_last_activity": 25,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3075",
+   "business_type": "LLP",
+   "industry": "Beauty & Wellness",
+   "city": "Kochi",
+   "preferred_language": "Hinglish",
+   "signup_date": "02 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 9.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 18,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3076",
+   "business_type": "Proprietorship",
+   "industry": "Travel & Hospitality",
+   "city": "Lucknow",
+   "preferred_language": "Hinglish",
+   "signup_date": "29 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 2.3,
+   "whatsapp_opted_in": "No",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 37,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "R01",
+   "rejection_message": "PAN ka naam aur application ka naam match nahi kar raha"
+  },
+  {
+   "application_id": "A3077",
+   "business_type": "Proprietorship",
+   "industry": "Apparel & Fashion",
+   "city": "Delhi NCR",
+   "preferred_language": "Hinglish",
+   "signup_date": "24 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 2.9,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 4,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3078",
+   "business_type": "LLP",
+   "industry": "Health & Pharmacy",
+   "city": "Jaipur",
+   "preferred_language": "Tamil",
+   "signup_date": "03 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 17.6,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 29,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3079",
+   "business_type": "Private Limited",
+   "industry": "Education / Coaching",
+   "city": "Pune",
+   "preferred_language": "Hindi",
+   "signup_date": "14 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 24.4,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 6,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3080",
+   "business_type": "Proprietorship",
+   "industry": "Education / Coaching",
+   "city": "Bengaluru",
+   "preferred_language": "Marathi",
+   "signup_date": "13 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 5.0,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Stalled",
+   "days_since_last_activity": 33,
+   "attempts": 3,
+   "support_contacts": 2,
+   "rejection_code": "R06",
+   "rejection_message": "Website does not display Terms, Privacy and Refund policy pages"
+  },
+  {
+   "application_id": "A3081",
+   "business_type": "Private Limited",
+   "industry": "Travel & Hospitality",
+   "city": "Kochi",
+   "preferred_language": "Hindi",
+   "signup_date": "23 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 50.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 13,
+   "attempts": 4,
+   "support_contacts": 3,
+   "rejection_code": "",
+   "rejection_message": "Signatory ka ID proof upload nahi hua"
+  },
+  {
+   "application_id": "A3082",
+   "business_type": "Proprietorship",
+   "industry": "Gifting & Festive",
+   "city": "Kochi",
+   "preferred_language": "English",
+   "signup_date": "31 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 7.7,
+   "whatsapp_opted_in": "No",
+   "step_reached": "KYC docs",
+   "application_status": "Rejected",
+   "days_since_last_activity": 32,
+   "attempts": 1,
+   "support_contacts": 2,
+   "rejection_code": "R12",
+   "rejection_message": "Compliance review pending"
+  },
+  {
+   "application_id": "A3083",
+   "business_type": "Private Limited",
+   "industry": "Grocery & Food",
+   "city": "Kolkata",
+   "preferred_language": "Hinglish",
+   "signup_date": "22 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 13.3,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Business details",
+   "application_status": "Stalled",
+   "days_since_last_activity": 29,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3084",
+   "business_type": "LLP",
+   "industry": "Health & Pharmacy",
+   "city": "Indore",
+   "preferred_language": "English",
+   "signup_date": "09 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 16.4,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 0,
+   "attempts": 2,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3085",
+   "business_type": "Private Limited",
+   "industry": "Home & Furniture",
+   "city": "Chandigarh",
+   "preferred_language": "English",
+   "signup_date": "02 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 11.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 9,
+   "attempts": 4,
+   "support_contacts": 2,
+   "rejection_code": "R01",
+   "rejection_message": "PAN ka naam aur application ka naam match nahi kar raha"
+  },
+  {
+   "application_id": "A3086",
+   "business_type": "Private Limited",
+   "industry": "Health & Pharmacy",
+   "city": "Ahmedabad",
+   "preferred_language": "English",
+   "signup_date": "21 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 19.1,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 7,
+   "attempts": 2,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3087",
+   "business_type": "Private Limited",
+   "industry": "Books & Stationery",
+   "city": "Pune",
+   "preferred_language": "English",
+   "signup_date": "22 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 8.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Business details",
+   "application_status": "Stalled",
+   "days_since_last_activity": 16,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3088",
+   "business_type": "Private Limited",
+   "industry": "Gifting & Festive",
+   "city": "Indore",
+   "preferred_language": "Hindi",
+   "signup_date": "20 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 38.3,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 14,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "R03",
+   "rejection_message": "Bank account ka naam business se alag hai"
+  },
+  {
+   "application_id": "A3089",
+   "business_type": "Partnership",
+   "industry": "Education / Coaching",
+   "city": "Chandigarh",
+   "preferred_language": "Hinglish",
+   "signup_date": "22 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 5.7,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 11,
+   "attempts": 2,
+   "support_contacts": 0,
+   "rejection_code": "R05",
+   "rejection_message": "Document not readable. Resubmit"
+  },
+  {
+   "application_id": "A3090",
+   "business_type": "Partnership",
+   "industry": "Gifting & Festive",
+   "city": "Surat",
+   "preferred_language": "Hinglish",
+   "signup_date": "02 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 8.0,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Website/App review",
+   "application_status": "Stalled",
+   "days_since_last_activity": 31,
+   "attempts": 1,
+   "support_contacts": 3,
+   "rejection_code": "R07",
+   "rejection_message": "Site requires login, cannot review products and prices"
+  },
+  {
+   "application_id": "A3091",
+   "business_type": "Private Limited",
+   "industry": "Apparel & Fashion",
+   "city": "Indore",
+   "preferred_language": "English",
+   "signup_date": "12 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 15.8,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 6,
+   "attempts": 4,
+   "support_contacts": 2,
+   "rejection_code": "R03",
+   "rejection_message": "Account name mismatch. Please provide bank letter"
+  },
+  {
+   "application_id": "A3092",
+   "business_type": "Partnership",
+   "industry": "Home & Furniture",
+   "city": "Indore",
+   "preferred_language": "Tamil",
+   "signup_date": "14 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 18.6,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Stalled",
+   "days_since_last_activity": 13,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "R02",
+   "rejection_message": "GSTIN inactive / legal name mismatch with application"
+  },
+  {
+   "application_id": "A3093",
+   "business_type": "LLP",
+   "industry": "Travel & Hospitality",
+   "city": "Mumbai",
+   "preferred_language": "Tamil",
+   "signup_date": "20 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 13.6,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Rejected",
+   "days_since_last_activity": 6,
+   "attempts": 2,
+   "support_contacts": 2,
+   "rejection_code": "R10",
+   "rejection_message": "Is business category ko support nahi kar sakte"
+  },
+  {
+   "application_id": "A3094",
+   "business_type": "Proprietorship",
+   "industry": "Electronics",
+   "city": "Chennai",
+   "preferred_language": "Tamil",
+   "signup_date": "26 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 1.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Rejected",
+   "days_since_last_activity": 33,
+   "attempts": 1,
+   "support_contacts": 2,
+   "rejection_code": "R12",
+   "rejection_message": "Screening hit - refer compliance"
+  },
+  {
+   "application_id": "A3095",
+   "business_type": "Proprietorship",
+   "industry": "Grocery & Food",
+   "city": "Delhi NCR",
+   "preferred_language": "Hindi",
+   "signup_date": "23 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 6.9,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Bank verification",
+   "application_status": "Stalled",
+   "days_since_last_activity": 29,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "R03",
+   "rejection_message": "Account name mismatch. Please provide bank letter"
+  },
+  {
+   "application_id": "A3096",
+   "business_type": "Private Limited",
+   "industry": "Health & Pharmacy",
+   "city": "Hyderabad",
+   "preferred_language": "Hindi",
+   "signup_date": "05 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 48.0,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "KYC docs",
+   "application_status": "Rejected",
+   "days_since_last_activity": 23,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "R12",
+   "rejection_message": "Compliance review pending"
+  },
+  {
+   "application_id": "A3097",
+   "business_type": "Trust / NGO",
+   "industry": "SaaS / Digital Services",
+   "city": "Surat",
+   "preferred_language": "Kannada",
+   "signup_date": "20 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 1.1,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Rejected",
+   "days_since_last_activity": 25,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "R10",
+   "rejection_message": "Is business category ko support nahi kar sakte"
+  },
+  {
+   "application_id": "A3098",
+   "business_type": "LLP",
+   "industry": "SaaS / Digital Services",
+   "city": "Chennai",
+   "preferred_language": "Hindi",
+   "signup_date": "23 Sep 2026",
+   "expected_monthly_tpv_inr_lakh": 12.9,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Business details",
+   "application_status": "Stalled",
+   "days_since_last_activity": 26,
+   "attempts": 1,
+   "support_contacts": 1,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3099",
+   "business_type": "Trust / NGO",
+   "industry": "Health & Pharmacy",
+   "city": "Hyderabad",
+   "preferred_language": "Tamil",
+   "signup_date": "22 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 4.9,
+   "whatsapp_opted_in": "No",
+   "step_reached": "Activated",
+   "application_status": "Activated",
+   "days_since_last_activity": 13,
+   "attempts": 2,
+   "support_contacts": 0,
+   "rejection_code": "",
+   "rejection_message": ""
+  },
+  {
+   "application_id": "A3100",
+   "business_type": "LLP",
+   "industry": "Gifting & Festive",
+   "city": "Surat",
+   "preferred_language": "English",
+   "signup_date": "28 Aug 2026",
+   "expected_monthly_tpv_inr_lakh": 11.1,
+   "whatsapp_opted_in": "Yes",
+   "step_reached": "Website/App review",
+   "application_status": "Stalled",
+   "days_since_last_activity": 10,
+   "attempts": 1,
+   "support_contacts": 0,
+   "rejection_code": "R06",
+   "rejection_message": "Missing policy pages (T&C / refund / contact) on website"
+  }
+ ],
+ "catalog": [
+  {
+   "code": "R01",
+   "reviewer_reason": "PAN name does not match business name",
+   "plain_language_meaning": "The name on the PAN card is different from the business name entered.",
+   "fixable": "Yes",
+   "standard_fix": "Upload the PAN of the business (or proprietor) whose name matches the application, or correct the business name to match the PAN.",
+   "typical_days_to_fix": 1
+  },
+  {
+   "code": "R02",
+   "reviewer_reason": "GST certificate invalid or mismatched",
+   "plain_language_meaning": "GSTIN is wrong, inactive, or belongs to a different legal name or address.",
+   "fixable": "Yes",
+   "standard_fix": "Enter the correct GSTIN, or upload a current GST certificate that matches the legal name and address.",
+   "typical_days_to_fix": 2
+  },
+  {
+   "code": "R03",
+   "reviewer_reason": "Bank account name mismatch",
+   "plain_language_meaning": "The bank account holder name differs from the business or PAN name.",
+   "fixable": "Yes",
+   "standard_fix": "Use a current account in the business name (or proprietor's name for proprietorships), or upload a bank letter / cancelled cheque showing the matching name.",
+   "typical_days_to_fix": 2
+  },
+  {
+   "code": "R04",
+   "reviewer_reason": "Bank verification failed",
+   "plain_language_meaning": "Account number or IFSC is wrong, or the account is inactive, so the Re 1 test credit failed.",
+   "fixable": "Yes",
+   "standard_fix": "Re-enter the account number and IFSC carefully; check the account is active and can receive credits.",
+   "typical_days_to_fix": 1
+  },
+  {
+   "code": "R05",
+   "reviewer_reason": "Document unreadable",
+   "plain_language_meaning": "The uploaded image or PDF is blurred, cropped, or password-protected.",
+   "fixable": "Yes",
+   "standard_fix": "Re-upload a clear, full-page colour scan in PDF/JPG/PNG under 5 MB.",
+   "typical_days_to_fix": 1
+  },
+  {
+   "code": "R06",
+   "reviewer_reason": "Website missing mandatory policy pages",
+   "plain_language_meaning": "Website or app lacks Terms & Conditions, Privacy Policy, Refund/Cancellation Policy or Contact details.",
+   "fixable": "Yes",
+   "standard_fix": "Add all four pages with working links and resubmit the website URL.",
+   "typical_days_to_fix": 3
+  },
+  {
+   "code": "R07",
+   "reviewer_reason": "Website not live",
+   "plain_language_meaning": "Website is down, under construction, or needs a login to view products and prices.",
+   "fixable": "Yes",
+   "standard_fix": "Make the website publicly accessible with products, prices and contact details visible, then resubmit.",
+   "typical_days_to_fix": 3
+  },
+  {
+   "code": "R08",
+   "reviewer_reason": "Address proof missing or outdated",
+   "plain_language_meaning": "No address proof, or the proof is older than 3 months or shows a different address.",
+   "fixable": "Yes",
+   "standard_fix": "Upload a recent utility bill, rent agreement or other valid address proof matching the application address.",
+   "typical_days_to_fix": 2
+  },
+  {
+   "code": "R09",
+   "reviewer_reason": "Signatory details incomplete",
+   "plain_language_meaning": "Authorised signatory or director ID is missing, or the details don't match the application.",
+   "fixable": "Yes",
+   "standard_fix": "Upload a valid ID of the authorised signatory and ensure the name and DOB match the application.",
+   "typical_days_to_fix": 2
+  },
+  {
+   "code": "R10",
+   "reviewer_reason": "Restricted business category",
+   "plain_language_meaning": "The business sells products or services we cannot support (for example gambling or prohibited goods).",
+   "fixable": "No",
+   "standard_fix": "Cannot be fixed. Politely close the application; do not suggest workarounds.",
+   "typical_days_to_fix": 0
+  },
+  {
+   "code": "R11",
+   "reviewer_reason": "Declared category differs from website",
+   "plain_language_meaning": "The business category selected differs from what the website actually sells.",
+   "fixable": "Yes",
+   "standard_fix": "Select the correct category, or share a short note and evidence explaining the business model, for a second review.",
+   "typical_days_to_fix": 3
+  },
+  {
+   "code": "R12",
+   "reviewer_reason": "Compliance / sanctions screening hit",
+   "plain_language_meaning": "The application matched a negative or sanctions list during screening.",
+   "fixable": "Needs compliance review",
+   "standard_fix": "Do not discuss the reason with the applicant. Route to the Compliance team and tell the applicant it is under review.",
+   "typical_days_to_fix": 0
+  },
+  {
+   "code": "R13",
+   "reviewer_reason": "Abandoned application",
+   "plain_language_meaning": "No rejection. The applicant started the application but stopped without finishing.",
+   "fixable": "Yes",
+   "standard_fix": "Send a friendly reminder naming the exact step they stopped at, with a direct link to resume.",
+   "typical_days_to_fix": 1
+  }
+ ],
+ "templates": [
+  {
+   "key": "greeting",
+   "language": "English",
+   "text": "Hello from Razorpay,"
+  },
+  {
+   "key": "greeting",
+   "language": "Hinglish",
+   "text": "Namaste, Razorpay se message hai."
+  },
+  {
+   "key": "greeting",
+   "language": "Hindi",
+   "text": "नमस्ते, Razorpay की ओर से संदेश।"
+  },
+  {
+   "key": "greeting",
+   "language": "Tamil",
+   "text": "வணக்கம், Razorpay-விலிருந்து செய்தி."
+  },
+  {
+   "key": "greeting",
+   "language": "Kannada",
+   "text": "ನಮಸ್ಕಾರ, Razorpay ನಿಂದ ಸಂದೇಶ."
+  },
+  {
+   "key": "greeting",
+   "language": "Marathi",
+   "text": "नमस्कार, Razorpay कडून संदेश."
+  },
+  {
+   "key": "body:R01",
+   "language": "English",
+   "text": "The name on your PAN card doesn't match the business name in your application. Please upload the PAN of the business (or proprietor) that matches the application, or correct the business name to match the PAN."
+  },
+  {
+   "key": "body:R01",
+   "language": "Hinglish",
+   "text": "Aapke PAN card ka naam application mein likhe business name se match nahi kar raha. Kripya application wale naam ka PAN upload karein, ya business name ko PAN ke hisaab se theek karein."
+  },
+  {
+   "key": "body:R01",
+   "language": "Hindi",
+   "text": "आपके PAN कार्ड का नाम आवेदन में दिए गए व्यवसाय के नाम से मेल नहीं खा रहा। कृपया आवेदन के नाम वाला PAN (व्यवसाय या मालिक का) अपलोड करें, या व्यवसाय का नाम PAN के अनुसार सुधारें।"
+  },
+  {
+   "key": "body:R01",
+   "language": "Tamil",
+   "text": "உங்கள் PAN கார்டில் உள்ள பெயர், விண்ணப்பத்தில் உள்ள வணிகப் பெயருடன் பொருந்தவில்லை. விண்ணப்பத்தில் உள்ள பெயருடன் பொருந்தும் PAN-ஐ (வணிகம் அல்லது உரிமையாளர்) பதிவேற்றவும், அல்லது வணிகப் பெயரை PAN-உடன் பொருந்தும்படி திருத்தவும்."
+  },
+  {
+   "key": "body:R01",
+   "language": "Kannada",
+   "text": "ನಿಮ್ಮ PAN ಕಾರ್ಡ್‌ನಲ್ಲಿರುವ ಹೆಸರು ಅರ್ಜಿಯಲ್ಲಿರುವ ವ್ಯವಹಾರದ ಹೆಸರಿಗೆ ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ. ಅರ್ಜಿಯ ಹೆಸರಿಗೆ ಹೊಂದುವ PAN (ವ್ಯವಹಾರ ಅಥವಾ ಮಾಲೀಕರದು) ಅಪ್‌ಲೋಡ್ ಮಾಡಿ, ಅಥವಾ ವ್ಯವಹಾರದ ಹೆಸರನ್ನು PAN ಗೆ ಹೊಂದುವಂತೆ ಸರಿಪಡಿಸಿ."
+  },
+  {
+   "key": "body:R01",
+   "language": "Marathi",
+   "text": "तुमच्या PAN कार्डवरील नाव अर्जातील व्यवसायाच्या नावाशी जुळत नाही. कृपया अर्जातील नावाशी जुळणारा PAN (व्यवसायाचा किंवा मालकाचा) अपलोड करा, किंवा व्यवसायाचे नाव PAN नुसार दुरुस्त करा."
+  },
+  {
+   "key": "body:R02",
+   "language": "English",
+   "text": "We couldn't validate your GST details. Please enter the correct GSTIN, or upload a current GST certificate that matches your legal name and address."
+  },
+  {
+   "key": "body:R02",
+   "language": "Hinglish",
+   "text": "Aapke GST details verify nahi ho paye. Kripya sahi GSTIN daalein, ya aisa current GST certificate upload karein jo aapke legal name aur address se match karta ho."
+  },
+  {
+   "key": "body:R02",
+   "language": "Hindi",
+   "text": "आपके GST विवरण सत्यापित नहीं हो पाए। कृपया सही GSTIN दर्ज करें, या ऐसा वर्तमान GST प्रमाणपत्र अपलोड करें जो आपके कानूनी नाम और पते से मेल खाता हो।"
+  },
+  {
+   "key": "body:R02",
+   "language": "Tamil",
+   "text": "உங்கள் GST விவரங்களைச் சரிபார்க்க முடியவில்லை. சரியான GSTIN-ஐ உள்ளிடவும், அல்லது உங்கள் சட்டப்பூர்வ பெயர் மற்றும் முகவரியுடன் பொருந்தும் தற்போதைய GST சான்றிதழைப் பதிவேற்றவும்."
+  },
+  {
+   "key": "body:R02",
+   "language": "Kannada",
+   "text": "ನಿಮ್ಮ GST ವಿವರಗಳನ್ನು ಪರಿಶೀಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಸರಿಯಾದ GSTIN ನಮೂದಿಸಿ, ಅಥವಾ ನಿಮ್ಮ ಕಾನೂನುಬದ್ಧ ಹೆಸರು ಮತ್ತು ವಿಳಾಸಕ್ಕೆ ಹೊಂದುವ ಇತ್ತೀಚಿನ GST ಪ್ರಮಾಣಪತ್ರ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
+  },
+  {
+   "key": "body:R02",
+   "language": "Marathi",
+   "text": "तुमचे GST तपशील पडताळता आले नाहीत. कृपया योग्य GSTIN टाका, किंवा तुमच्या कायदेशीर नावाशी आणि पत्त्याशी जुळणारे चालू GST प्रमाणपत्र अपलोड करा."
+  },
+  {
+   "key": "body:R03",
+   "language": "English",
+   "text": "The bank account holder name doesn't match your business or PAN name. Please use a current account in the business name (for a proprietorship, the proprietor's name works), or upload a bank letter or cancelled cheque showing the matching name."
+  },
+  {
+   "key": "body:R03",
+   "language": "Hinglish",
+   "text": "Bank account holder ka naam aapke business ya PAN ke naam se match nahi kar raha. Kripya business ke naam ka current account use karein (proprietorship mein proprietor ka naam chalega), ya matching naam wala bank letter ya cancelled cheque upload karein."
+  },
+  {
+   "key": "body:R03",
+   "language": "Hindi",
+   "text": "बैंक खाताधारक का नाम आपके व्यवसाय या PAN के नाम से मेल नहीं खा रहा। कृपया व्यवसाय के नाम का चालू खाता इस्तेमाल करें (प्रोप्राइटरशिप में मालिक का नाम चलेगा), या सही नाम दिखाने वाला बैंक पत्र या कैंसिल चेक अपलोड करें।"
+  },
+  {
+   "key": "body:R03",
+   "language": "Tamil",
+   "text": "வங்கிக் கணக்கு வைத்திருப்பவரின் பெயர் உங்கள் வணிகம் அல்லது PAN பெயருடன் பொருந்தவில்லை. வணிகப் பெயரில் உள்ள நடப்புக் கணக்கைப் பயன்படுத்தவும் (தனியுரிமை நிறுவனத்தில் உரிமையாளர் பெயர் போதும்), அல்லது பொருந்தும் பெயர் காட்டும் வங்கிக் கடிதம் அல்லது ரத்து செய்யப்பட்ட காசோலையைப் பதிவேற்றவும்."
+  },
+  {
+   "key": "body:R03",
+   "language": "Kannada",
+   "text": "ಬ್ಯಾಂಕ್ ಖಾತೆದಾರರ ಹೆಸರು ನಿಮ್ಮ ವ್ಯವಹಾರ ಅಥವಾ PAN ಹೆಸರಿಗೆ ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ. ವ್ಯವಹಾರದ ಹೆಸರಿನ ಚಾಲ್ತಿ ಖಾತೆ ಬಳಸಿ (ಏಕಮಾಲೀಕತ್ವದಲ್ಲಿ ಮಾಲೀಕರ ಹೆಸರು ಸಾಕು), ಅಥವಾ ಹೊಂದುವ ಹೆಸರು ತೋರಿಸುವ ಬ್ಯಾಂಕ್ ಪತ್ರ ಅಥವಾ ರದ್ದಾದ ಚೆಕ್ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
+  },
+  {
+   "key": "body:R03",
+   "language": "Marathi",
+   "text": "बँक खातेधारकाचे नाव तुमच्या व्यवसायाच्या किंवा PAN च्या नावाशी जुळत नाही. कृपया व्यवसायाच्या नावाचे चालू खाते वापरा (प्रोप्रायटरशिपमध्ये मालकाचे नाव चालते), किंवा जुळणारे नाव दाखवणारे बँक पत्र किंवा रद्द केलेला चेक अपलोड करा."
+  },
+  {
+   "key": "body:R04",
+   "language": "English",
+   "text": "Your bank account couldn't be verified with the Re 1 test credit. Please re-enter the account number and IFSC carefully, and check that the account is active and can receive credits."
+  },
+  {
+   "key": "body:R04",
+   "language": "Hinglish",
+   "text": "Aapka bank account Re 1 test credit se verify nahi ho paya. Kripya account number aur IFSC dhyan se dobara daalein, aur check karein ki account active hai aur usme paisa aa sakta hai."
+  },
+  {
+   "key": "body:R04",
+   "language": "Hindi",
+   "text": "आपका बैंक खाता Re 1 टेस्ट क्रेडिट से सत्यापित नहीं हो पाया। कृपया खाता संख्या और IFSC ध्यान से दोबारा दर्ज करें, और जाँच लें कि खाता चालू है और उसमें पैसे आ सकते हैं।"
+  },
+  {
+   "key": "body:R04",
+   "language": "Tamil",
+   "text": "உங்கள் வங்கிக் கணக்கை Re 1 சோதனைப் பரிவர்த்தனை மூலம் சரிபார்க்க முடியவில்லை. கணக்கு எண் மற்றும் IFSC-ஐ கவனமாக மீண்டும் உள்ளிடவும், மேலும் கணக்கு செயலில் உள்ளதா, பணம் பெற முடியுமா என்று சரிபார்க்கவும்."
+  },
+  {
+   "key": "body:R04",
+   "language": "Kannada",
+   "text": "ನಿಮ್ಮ ಬ್ಯಾಂಕ್ ಖಾತೆಯನ್ನು Re 1 ಪರೀಕ್ಷಾ ಜಮಾವಣೆಯ ಮೂಲಕ ಪರಿಶೀಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಖಾತೆ ಸಂಖ್ಯೆ ಮತ್ತು IFSC ಅನ್ನು ಎಚ್ಚರಿಕೆಯಿಂದ ಮತ್ತೆ ನಮೂದಿಸಿ, ಹಾಗೂ ಖಾತೆ ಚಾಲ್ತಿಯಲ್ಲಿದೆಯೇ ಮತ್ತು ಹಣ ಸ್ವೀಕರಿಸಬಹುದೇ ಎಂದು ಪರಿಶೀಲಿಸಿ."
+  },
+  {
+   "key": "body:R04",
+   "language": "Marathi",
+   "text": "तुमचे बँक खाते Re 1 चाचणी जमेने पडताळता आले नाही. कृपया खाते क्रमांक आणि IFSC काळजीपूर्वक पुन्हा टाका, आणि खाते चालू आहे व त्यात पैसे जमा होऊ शकतात का ते तपासा."
+  },
+  {
+   "key": "body:R05",
+   "language": "English",
+   "text": "The document you uploaded is blurred, cropped or password-protected, so we couldn't read it. Please re-upload a clear, full-page colour scan as PDF, JPG or PNG, under 5 MB."
+  },
+  {
+   "key": "body:R05",
+   "language": "Hinglish",
+   "text": "Aapka upload kiya hua document blurred, cropped ya password-protected hai, isliye padha nahi ja saka. Kripya saaf, poore page ka colour scan PDF, JPG ya PNG mein (5 MB se kam) dobara upload karein."
+  },
+  {
+   "key": "body:R05",
+   "language": "Hindi",
+   "text": "आपका अपलोड किया दस्तावेज़ धुंधला, कटा हुआ या पासवर्ड वाला है, इसलिए पढ़ा नहीं जा सका। कृपया साफ़, पूरे पेज का रंगीन स्कैन PDF, JPG या PNG में (5 MB से कम) दोबारा अपलोड करें।"
+  },
+  {
+   "key": "body:R05",
+   "language": "Tamil",
+   "text": "நீங்கள் பதிவேற்றிய ஆவணம் மங்கலாக, வெட்டப்பட்டு அல்லது கடவுச்சொல் பாதுகாப்புடன் உள்ளதால் படிக்க முடியவில்லை. தெளிவான, முழுப் பக்க வண்ண ஸ்கேனை PDF, JPG அல்லது PNG வடிவில் (5 MB-க்குள்) மீண்டும் பதிவேற்றவும்."
+  },
+  {
+   "key": "body:R05",
+   "language": "Kannada",
+   "text": "ನೀವು ಅಪ್‌ಲೋಡ್ ಮಾಡಿದ ದಾಖಲೆ ಮಸುಕಾಗಿದೆ, ಕತ್ತರಿಸಲ್ಪಟ್ಟಿದೆ ಅಥವಾ ಪಾಸ್‌ವರ್ಡ್ ರಕ್ಷಿತವಾಗಿದೆ, ಆದ್ದರಿಂದ ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ಸ್ಪಷ್ಟವಾದ, ಪೂರ್ಣ ಪುಟದ ಬಣ್ಣದ ಸ್ಕ್ಯಾನ್ ಅನ್ನು PDF, JPG ಅಥವಾ PNG ರೂಪದಲ್ಲಿ (5 MB ಒಳಗೆ) ಮತ್ತೆ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
+  },
+  {
+   "key": "body:R05",
+   "language": "Marathi",
+   "text": "तुम्ही अपलोड केलेले कागदपत्र अस्पष्ट, कापलेले किंवा पासवर्ड असलेले आहे, त्यामुळे वाचता आले नाही. कृपया स्पष्ट, पूर्ण पानाचा रंगीत स्कॅन PDF, JPG किंवा PNG मध्ये (5 MB पेक्षा कमी) पुन्हा अपलोड करा."
+  },
+  {
+   "key": "body:R06",
+   "language": "English",
+   "text": "Your website or app is missing required pages. Please add Terms & Conditions, Privacy Policy, Refund/Cancellation Policy and Contact details, with working links, then resubmit your website URL."
+  },
+  {
+   "key": "body:R06",
+   "language": "Hinglish",
+   "text": "Aapki website ya app par zaroori pages nahi hain. Kripya Terms & Conditions, Privacy Policy, Refund/Cancellation Policy aur Contact details working links ke saath add karein, phir website URL dobara submit karein."
+  },
+  {
+   "key": "body:R06",
+   "language": "Hindi",
+   "text": "आपकी वेबसाइट या ऐप पर ज़रूरी पेज नहीं हैं। कृपया नियम और शर्तें, गोपनीयता नीति, रिफंड/कैंसिलेशन नीति और संपर्क विवरण चालू लिंक के साथ जोड़ें, फिर अपनी वेबसाइट का URL दोबारा जमा करें।"
+  },
+  {
+   "key": "body:R06",
+   "language": "Tamil",
+   "text": "உங்கள் இணையதளம் அல்லது ஆப்பில் தேவையான பக்கங்கள் இல்லை. விதிமுறைகள் & நிபந்தனைகள், தனியுரிமைக் கொள்கை, பணத்திரும்பப்பெறல்/ரத்து கொள்கை மற்றும் தொடர்பு விவரங்களை வேலை செய்யும் இணைப்புகளுடன் சேர்த்து, உங்கள் இணையதள URL-ஐ மீண்டும் சமர்ப்பிக்கவும்."
+  },
+  {
+   "key": "body:R06",
+   "language": "Kannada",
+   "text": "ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್ ಅಥವಾ ಆ್ಯಪ್‌ನಲ್ಲಿ ಅಗತ್ಯ ಪುಟಗಳು ಇಲ್ಲ. ನಿಯಮಗಳು ಮತ್ತು ಷರತ್ತುಗಳು, ಗೌಪ್ಯತಾ ನೀತಿ, ಮರುಪಾವತಿ/ರದ್ದತಿ ನೀತಿ ಮತ್ತು ಸಂಪರ್ಕ ವಿವರಗಳನ್ನು ಕಾರ್ಯನಿರ್ವಹಿಸುವ ಲಿಂಕ್‌ಗಳೊಂದಿಗೆ ಸೇರಿಸಿ, ನಂತರ ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್ URL ಅನ್ನು ಮತ್ತೆ ಸಲ್ಲಿಸಿ."
+  },
+  {
+   "key": "body:R06",
+   "language": "Marathi",
+   "text": "तुमच्या वेबसाइट किंवा ॲपवर आवश्यक पाने नाहीत. कृपया अटी व शर्ती, गोपनीयता धोरण, परतावा/रद्दीकरण धोरण आणि संपर्क तपशील चालू दुव्यांसह जोडा, आणि नंतर तुमची वेबसाइट URL पुन्हा सबमिट करा."
+  },
+  {
+   "key": "body:R07",
+   "language": "English",
+   "text": "We couldn't review your website because it isn't publicly accessible (it may be down, under construction, or need a login). Please make it public, with products, prices and contact details visible, then resubmit."
+  },
+  {
+   "key": "body:R07",
+   "language": "Hinglish",
+   "text": "Aapki website review nahi ho paayi kyunki wo public roop se khul nahi rahi (down ho sakti hai, under construction ho sakti hai, ya login maangti hai). Kripya use public karein, products, prices aur contact details dikhayein, phir dobara submit karein."
+  },
+  {
+   "key": "body:R07",
+   "language": "Hindi",
+   "text": "आपकी वेबसाइट की समीक्षा नहीं हो सकी क्योंकि वह सबके लिए खुल नहीं रही (बंद हो सकती है, बन रही हो सकती है, या लॉगिन माँगती हो सकती है)। कृपया उसे सार्वजनिक करें, उत्पाद, कीमतें और संपर्क विवरण दिखाएँ, फिर दोबारा जमा करें।"
+  },
+  {
+   "key": "body:R07",
+   "language": "Tamil",
+   "text": "உங்கள் இணையதளம் அனைவருக்கும் திறக்கும் நிலையில் இல்லாததால் மதிப்பாய்வு செய்ய முடியவில்லை (இயங்காமல், உருவாக்கத்தில் அல்லது உள்நுழைவு தேவைப்படுவதாக இருக்கலாம்). தயவுசெய்து அதை பொதுவில் திறக்கும்படி செய்து, பொருட்கள், விலைகள் மற்றும் தொடர்பு விவரங்கள் தெரியும்படி வைத்து, மீண்டும் சமர்ப்பிக்கவும்."
+  },
+  {
+   "key": "body:R07",
+   "language": "Kannada",
+   "text": "ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್ ಎಲ್ಲರಿಗೂ ತೆರೆಯದ ಕಾರಣ ಪರಿಶೀಲಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ (ಅದು ಸ್ಥಗಿತಗೊಂಡಿರಬಹುದು, ನಿರ್ಮಾಣ ಹಂತದಲ್ಲಿರಬಹುದು ಅಥವಾ ಲಾಗಿನ್ ಕೇಳಬಹುದು). ದಯವಿಟ್ಟು ಅದನ್ನು ಸಾರ್ವಜನಿಕವಾಗಿ ತೆರೆಯುವಂತೆ ಮಾಡಿ, ಉತ್ಪನ್ನಗಳು, ಬೆಲೆಗಳು ಮತ್ತು ಸಂಪರ್ಕ ವಿವರಗಳು ಕಾಣುವಂತೆ ಇರಿಸಿ, ನಂತರ ಮತ್ತೆ ಸಲ್ಲಿಸಿ."
+  },
+  {
+   "key": "body:R07",
+   "language": "Marathi",
+   "text": "तुमची वेबसाइट सर्वांसाठी उघडत नसल्यामुळे तिचे पुनरावलोकन करता आले नाही (ती बंद, बांधणीत किंवा लॉगिन मागणारी असू शकते). कृपया ती सार्वजनिक करा, उत्पादने, किमती आणि संपर्क तपशील दिसतील असे ठेवा, आणि पुन्हा सबमिट करा."
+  },
+  {
+   "key": "body:R08",
+   "language": "English",
+   "text": "Your address proof is missing, older than 3 months, or shows a different address from your application. Please upload a recent utility bill, rent agreement or other valid address proof that matches the application address."
+  },
+  {
+   "key": "body:R08",
+   "language": "Hinglish",
+   "text": "Aapka address proof missing hai, 3 mahine se purana hai, ya application ke address se alag address dikha raha hai. Kripya recent utility bill, rent agreement ya koi aur valid address proof upload karein jo application ke address se match kare."
+  },
+  {
+   "key": "body:R08",
+   "language": "Hindi",
+   "text": "आपका पते का प्रमाण नहीं है, 3 महीने से पुराना है, या आवेदन के पते से अलग पता दिखा रहा है। कृपया हाल का बिजली/पानी का बिल, किराया समझौता या कोई और मान्य पते का प्रमाण अपलोड करें जो आवेदन के पते से मेल खाता हो।"
+  },
+  {
+   "key": "body:R08",
+   "language": "Tamil",
+   "text": "உங்கள் முகவரிச் சான்று இல்லை, 3 மாதங்களுக்கு மேல் பழையது, அல்லது விண்ணப்பத்தில் உள்ள முகவரியிலிருந்து வேறுபடுகிறது. விண்ணப்ப முகவரியுடன் பொருந்தும் சமீபத்திய பயன்பாட்டுக் கட்டண ரசீது, வாடகை ஒப்பந்தம் அல்லது வேறு செல்லுபடியாகும் முகவரிச் சான்றைப் பதிவேற்றவும்."
+  },
+  {
+   "key": "body:R08",
+   "language": "Kannada",
+   "text": "ನಿಮ್ಮ ವಿಳಾಸ ಪುರಾವೆ ಇಲ್ಲ, 3 ತಿಂಗಳಿಗಿಂತ ಹಳೆಯದು, ಅಥವಾ ಅರ್ಜಿಯ ವಿಳಾಸಕ್ಕಿಂತ ಬೇರೆ ವಿಳಾಸ ತೋರಿಸುತ್ತಿದೆ. ಅರ್ಜಿಯ ವಿಳಾಸಕ್ಕೆ ಹೊಂದುವ ಇತ್ತೀಚಿನ ಯುಟಿಲಿಟಿ ಬಿಲ್, ಬಾಡಿಗೆ ಒಪ್ಪಂದ ಅಥವಾ ಇತರ ಮಾನ್ಯ ವಿಳಾಸ ಪುರಾವೆ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ."
+  },
+  {
+   "key": "body:R08",
+   "language": "Marathi",
+   "text": "तुमचा पत्त्याचा पुरावा नाही, 3 महिन्यांपेक्षा जुना आहे, किंवा अर्जातील पत्त्यापेक्षा वेगळा पत्ता दाखवतो. कृपया अर्जातील पत्त्याशी जुळणारे अलीकडील युटिलिटी बिल, भाडेकरार किंवा इतर वैध पत्त्याचा पुरावा अपलोड करा."
+  },
+  {
+   "key": "body:R09",
+   "language": "English",
+   "text": "The ID of your authorised signatory or director is missing, or its details don't match your application. Please upload a valid ID of the authorised signatory, and make sure the name and date of birth match the application."
+  },
+  {
+   "key": "body:R09",
+   "language": "Hinglish",
+   "text": "Authorised signatory ya director ka ID missing hai, ya uski details application se match nahi kar rahi. Kripya authorised signatory ka valid ID upload karein, aur dhyan rakhein ki naam aur date of birth application se match karein."
+  },
+  {
+   "key": "body:R09",
+   "language": "Hindi",
+   "text": "अधिकृत हस्ताक्षरकर्ता या निदेशक का ID नहीं है, या उसकी जानकारी आवेदन से मेल नहीं खा रही। कृपया अधिकृत हस्ताक्षरकर्ता का मान्य ID अपलोड करें, और ध्यान रखें कि नाम और जन्मतिथि आवेदन से मेल खाएँ।"
+  },
+  {
+   "key": "body:R09",
+   "language": "Tamil",
+   "text": "அங்கீகரிக்கப்பட்ட கையொப்பதாரர் அல்லது இயக்குநரின் அடையாள ஆவணம் இல்லை, அல்லது அதன் விவரங்கள் விண்ணப்பத்துடன் பொருந்தவில்லை. அங்கீகரிக்கப்பட்ட கையொப்பதாரரின் செல்லுபடியாகும் அடையாள ஆவணத்தைப் பதிவேற்றி, பெயர் மற்றும் பிறந்த தேதி விண்ணப்பத்துடன் பொருந்துகிறதா என்று உறுதிசெய்யவும்."
+  },
+  {
+   "key": "body:R09",
+   "language": "Kannada",
+   "text": "ಅಧಿಕೃತ ಸಹಿದಾರ ಅಥವಾ ನಿರ್ದೇಶಕರ ಗುರುತಿನ ದಾಖಲೆ ಇಲ್ಲ, ಅಥವಾ ಅದರ ವಿವರಗಳು ಅರ್ಜಿಗೆ ಹೊಂದಿಕೆಯಾಗುತ್ತಿಲ್ಲ. ಅಧಿಕೃತ ಸಹಿದಾರರ ಮಾನ್ಯ ಗುರುತಿನ ದಾಖಲೆ ಅಪ್‌ಲೋಡ್ ಮಾಡಿ, ಮತ್ತು ಹೆಸರು ಹಾಗೂ ಜನ್ಮ ದಿನಾಂಕ ಅರ್ಜಿಗೆ ಹೊಂದುವಂತೆ ನೋಡಿಕೊಳ್ಳಿ."
+  },
+  {
+   "key": "body:R09",
+   "language": "Marathi",
+   "text": "अधिकृत स्वाक्षरीकर्ता किंवा संचालकाचे ओळखपत्र नाही, किंवा त्याचे तपशील अर्जाशी जुळत नाहीत. कृपया अधिकृत स्वाक्षरीकर्त्याचे वैध ओळखपत्र अपलोड करा, आणि नाव व जन्मतारीख अर्जाशी जुळते याची खात्री करा."
+  },
+  {
+   "key": "body:R10",
+   "language": "English",
+   "text": "Thank you for applying to Razorpay. After review, we are unable to support your business on our platform, so we are closing this application. We appreciate your interest."
+  },
+  {
+   "key": "body:R10",
+   "language": "Hinglish",
+   "text": "Razorpay mein apply karne ke liye dhanyavaad. Review ke baad hum aapke business ko apne platform par support nahi kar paayenge, isliye hum yeh application band kar rahe hain. Aapki ruchi ke liye shukriya."
+  },
+  {
+   "key": "body:R10",
+   "language": "Hindi",
+   "text": "Razorpay में आवेदन करने के लिए धन्यवाद। समीक्षा के बाद हम आपके व्यवसाय को अपने प्लेटफ़ॉर्म पर सपोर्ट नहीं कर पाएँगे, इसलिए यह आवेदन बंद किया जा रहा है। आपकी रुचि के लिए धन्यवाद।"
+  },
+  {
+   "key": "body:R10",
+   "language": "Tamil",
+   "text": "Razorpay-க்கு விண்ணப்பித்ததற்கு நன்றி. மதிப்பாய்வுக்குப் பிறகு, உங்கள் வணிகத்தை எங்கள் தளத்தில் ஆதரிக்க முடியவில்லை, எனவே இந்த விண்ணப்பத்தை முடித்து வைக்கிறோம். உங்கள் ஆர்வத்திற்கு நன்றி."
+  },
+  {
+   "key": "body:R10",
+   "language": "Kannada",
+   "text": "Razorpay ಗೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಿದ್ದಕ್ಕೆ ಧನ್ಯವಾದಗಳು. ಪರಿಶೀಲನೆಯ ನಂತರ, ನಿಮ್ಮ ವ್ಯವಹಾರವನ್ನು ನಮ್ಮ ವೇದಿಕೆಯಲ್ಲಿ ಬೆಂಬಲಿಸಲು ನಮಗೆ ಸಾಧ್ಯವಾಗುತ್ತಿಲ್ಲ, ಆದ್ದರಿಂದ ಈ ಅರ್ಜಿಯನ್ನು ಮುಕ್ತಾಯಗೊಳಿಸುತ್ತಿದ್ದೇವೆ. ನಿಮ್ಮ ಆಸಕ್ತಿಗೆ ಧನ್ಯವಾದಗಳು."
+  },
+  {
+   "key": "body:R10",
+   "language": "Marathi",
+   "text": "Razorpay कडे अर्ज केल्याबद्दल धन्यवाद. पुनरावलोकनानंतर, तुमच्या व्यवसायाला आमच्या प्लॅटफॉर्मवर सपोर्ट करणे आम्हाला शक्य नाही, म्हणून हा अर्ज बंद करत आहोत. तुमच्या रसाबद्दल धन्यवाद."
+  },
+  {
+   "key": "body:R11",
+   "language": "English",
+   "text": "The business category you selected is different from what your website actually sells. Please select the correct category, or share a short note with evidence explaining your business model so we can do a second review."
+  },
+  {
+   "key": "body:R11",
+   "language": "Hinglish",
+   "text": "Aapne jo business category chuni hai wo aapki website par bik rahe products se alag hai. Kripya sahi category chunein, ya apne business model ko samjhane wala chhota note evidence ke saath bhejein, taaki hum dobara review kar sakein."
+  },
+  {
+   "key": "body:R11",
+   "language": "Hindi",
+   "text": "आपने जो व्यवसाय श्रेणी चुनी है वह आपकी वेबसाइट पर बिकने वाली चीज़ों से अलग है। कृपया सही श्रेणी चुनें, या अपने व्यवसाय मॉडल को समझाने वाला छोटा नोट सबूत के साथ भेजें, ताकि हम दोबारा समीक्षा कर सकें।"
+  },
+  {
+   "key": "body:R11",
+   "language": "Tamil",
+   "text": "நீங்கள் தேர்ந்தெடுத்த வணிக வகை, உங்கள் இணையதளத்தில் உண்மையில் விற்கப்படுவதிலிருந்து வேறுபடுகிறது. சரியான வகையைத் தேர்ந்தெடுக்கவும், அல்லது உங்கள் வணிக மாதிரியை விளக்கும் சிறு குறிப்பை ஆதாரத்துடன் பகிரவும், இதனால் நாங்கள் இரண்டாவது முறை மதிப்பாய்வு செய்ய முடியும்."
+  },
+  {
+   "key": "body:R11",
+   "language": "Kannada",
+   "text": "ನೀವು ಆಯ್ಕೆ ಮಾಡಿದ ವ್ಯವಹಾರ ವರ್ಗವು ನಿಮ್ಮ ವೆಬ್‌ಸೈಟ್‌ನಲ್ಲಿ ನಿಜವಾಗಿ ಮಾರಾಟವಾಗುವುದಕ್ಕಿಂತ ಬೇರೆಯಾಗಿದೆ. ಸರಿಯಾದ ವರ್ಗ ಆಯ್ಕೆಮಾಡಿ, ಅಥವಾ ನಿಮ್ಮ ವ್ಯವಹಾರ ಮಾದರಿಯನ್ನು ವಿವರಿಸುವ ಸಣ್ಣ ಟಿಪ್ಪಣಿಯನ್ನು ಸಾಕ್ಷ್ಯದೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳಿ, ಇದರಿಂದ ನಾವು ಎರಡನೇ ಬಾರಿ ಪರಿಶೀಲಿಸಬಹುದು."
+  },
+  {
+   "key": "body:R11",
+   "language": "Marathi",
+   "text": "तुम्ही निवडलेली व्यवसाय श्रेणी तुमच्या वेबसाइटवर प्रत्यक्षात विकल्या जाणाऱ्या गोष्टींपेक्षा वेगळी आहे. कृपया योग्य श्रेणी निवडा, किंवा तुमचे व्यवसाय मॉडेल समजावणारी छोटी टीप पुराव्यासह पाठवा, म्हणजे आम्ही पुन्हा पुनरावलोकन करू शकू."
+  },
+  {
+   "key": "body:R12",
+   "language": "English",
+   "text": "Thank you for applying to Razorpay. Your application is currently under review. We will contact you once the review is complete. You don't need to do anything right now."
+  },
+  {
+   "key": "body:R12",
+   "language": "Hinglish",
+   "text": "Razorpay mein apply karne ke liye dhanyavaad. Aapki application abhi review mein hai. Review poora hone par hum aapse sampark karenge. Abhi aapko kuch karne ki zaroorat nahi hai."
+  },
+  {
+   "key": "body:R12",
+   "language": "Hindi",
+   "text": "Razorpay में आवेदन करने के लिए धन्यवाद। आपका आवेदन अभी समीक्षा में है। समीक्षा पूरी होने पर हम आपसे संपर्क करेंगे। अभी आपको कुछ करने की ज़रूरत नहीं है।"
+  },
+  {
+   "key": "body:R12",
+   "language": "Tamil",
+   "text": "Razorpay-க்கு விண்ணப்பித்ததற்கு நன்றி. உங்கள் விண்ணப்பம் தற்போது மதிப்பாய்வில் உள்ளது. மதிப்பாய்வு முடிந்ததும் நாங்கள் உங்களைத் தொடர்பு கொள்வோம். இப்போது நீங்கள் எதுவும் செய்யத் தேவையில்லை."
+  },
+  {
+   "key": "body:R12",
+   "language": "Kannada",
+   "text": "Razorpay ಗೆ ಅರ್ಜಿ ಸಲ್ಲಿಸಿದ್ದಕ್ಕೆ ಧನ್ಯವಾದಗಳು. ನಿಮ್ಮ ಅರ್ಜಿ ಪ್ರಸ್ತುತ ಪರಿಶೀಲನೆಯಲ್ಲಿದೆ. ಪರಿಶೀಲನೆ ಪೂರ್ಣಗೊಂಡ ನಂತರ ನಾವು ನಿಮ್ಮನ್ನು ಸಂಪರ್ಕಿಸುತ್ತೇವೆ. ಈಗ ನೀವು ಏನನ್ನೂ ಮಾಡುವ ಅಗತ್ಯವಿಲ್ಲ."
+  },
+  {
+   "key": "body:R12",
+   "language": "Marathi",
+   "text": "Razorpay कडे अर्ज केल्याबद्दल धन्यवाद. तुमचा अर्ज सध्या पुनरावलोकनात आहे. पुनरावलोकन पूर्ण झाल्यावर आम्ही तुमच्याशी संपर्क साधू. सध्या तुम्हाला काही करण्याची गरज नाही."
+  },
+  {
+   "key": "body:R13",
+   "language": "English",
+   "text": "You started your Razorpay application but stopped at the {step} step. You can pick up right where you left off."
+  },
+  {
+   "key": "body:R13",
+   "language": "Hinglish",
+   "text": "Aapne Razorpay application shuru ki thi lekin {step} step par ruk gaye. Aap wahin se aage badh sakte hain jahan chhoda tha."
+  },
+  {
+   "key": "body:R13",
+   "language": "Hindi",
+   "text": "आपने Razorpay आवेदन शुरू किया था लेकिन {step} चरण पर रुक गए। आप वहीं से आगे बढ़ सकते हैं जहाँ छोड़ा था।"
+  },
+  {
+   "key": "body:R13",
+   "language": "Tamil",
+   "text": "நீங்கள் Razorpay விண்ணப்பத்தைத் தொடங்கினீர்கள், ஆனால் {step} படியில் நிறுத்திவிட்டீர்கள். விட்ட இடத்திலிருந்தே தொடரலாம்."
+  },
+  {
+   "key": "body:R13",
+   "language": "Kannada",
+   "text": "ನೀವು Razorpay ಅರ್ಜಿಯನ್ನು ಪ್ರಾರಂಭಿಸಿದ್ದೀರಿ, ಆದರೆ {step} ಹಂತದಲ್ಲಿ ನಿಲ್ಲಿಸಿದ್ದೀರಿ. ಬಿಟ್ಟ ಸ್ಥಳದಿಂದಲೇ ಮುಂದುವರಿಸಬಹುದು."
+  },
+  {
+   "key": "body:R13",
+   "language": "Marathi",
+   "text": "तुम्ही Razorpay अर्ज सुरू केला होता, पण {step} टप्प्यावर थांबलात. जिथे थांबलात तिथूनच पुढे सुरू करू शकता."
+  },
+  {
+   "key": "link_line",
+   "language": "English",
+   "text": "Continue here: [resume link]. Need help? Just reply to this message."
+  },
+  {
+   "key": "link_line",
+   "language": "Hinglish",
+   "text": "Yahan se aage badhein: [resume link]. Madad chahiye to is message ka reply karein."
+  },
+  {
+   "key": "link_line",
+   "language": "Hindi",
+   "text": "यहाँ से आगे बढ़ें: [resume link]। मदद चाहिए तो इस संदेश का जवाब दें।"
+  },
+  {
+   "key": "link_line",
+   "language": "Tamil",
+   "text": "இங்கே தொடரவும்: [resume link]. உதவி தேவைப்பட்டால் இந்த செய்திக்கு பதிலளிக்கவும்."
+  },
+  {
+   "key": "link_line",
+   "language": "Kannada",
+   "text": "ಇಲ್ಲಿಂದ ಮುಂದುವರಿಸಿ: [resume link]. ಸಹಾಯ ಬೇಕಾದರೆ ಈ ಸಂದೇಶಕ್ಕೆ ಉತ್ತರಿಸಿ."
+  },
+  {
+   "key": "link_line",
+   "language": "Marathi",
+   "text": "येथून पुढे जा: [resume link]. मदत हवी असल्यास या संदेशाला उत्तर द्या."
+  },
+  {
+   "key": "step:Bank verification",
+   "language": "English",
+   "text": "Bank verification"
+  },
+  {
+   "key": "step:Bank verification",
+   "language": "Hinglish",
+   "text": "Bank verification"
+  },
+  {
+   "key": "step:Bank verification",
+   "language": "Hindi",
+   "text": "बैंक सत्यापन"
+  },
+  {
+   "key": "step:Bank verification",
+   "language": "Tamil",
+   "text": "வங்கி சரிபார்ப்பு"
+  },
+  {
+   "key": "step:Bank verification",
+   "language": "Kannada",
+   "text": "ಬ್ಯಾಂಕ್ ಪರಿಶೀಲನೆ"
+  },
+  {
+   "key": "step:Bank verification",
+   "language": "Marathi",
+   "text": "बँक पडताळणी"
+  },
+  {
+   "key": "step:Business details",
+   "language": "English",
+   "text": "Business details"
+  },
+  {
+   "key": "step:Business details",
+   "language": "Hinglish",
+   "text": "Business details"
+  },
+  {
+   "key": "step:Business details",
+   "language": "Hindi",
+   "text": "व्यवसाय की जानकारी"
+  },
+  {
+   "key": "step:Business details",
+   "language": "Tamil",
+   "text": "வணிக விவரங்கள்"
+  },
+  {
+   "key": "step:Business details",
+   "language": "Kannada",
+   "text": "ವ್ಯವಹಾರ ವಿವರಗಳು"
+  },
+  {
+   "key": "step:Business details",
+   "language": "Marathi",
+   "text": "व्यवसायाची माहिती"
+  },
+  {
+   "key": "step:KYC docs",
+   "language": "English",
+   "text": "KYC documents"
+  },
+  {
+   "key": "step:KYC docs",
+   "language": "Hinglish",
+   "text": "KYC documents"
+  },
+  {
+   "key": "step:KYC docs",
+   "language": "Hindi",
+   "text": "KYC दस्तावेज़"
+  },
+  {
+   "key": "step:KYC docs",
+   "language": "Tamil",
+   "text": "KYC ஆவணங்கள்"
+  },
+  {
+   "key": "step:KYC docs",
+   "language": "Kannada",
+   "text": "KYC ದಾಖಲೆಗಳು"
+  },
+  {
+   "key": "step:KYC docs",
+   "language": "Marathi",
+   "text": "KYC कागदपत्रे"
+  },
+  {
+   "key": "step:Website/App review",
+   "language": "English",
+   "text": "Website/App review"
+  },
+  {
+   "key": "step:Website/App review",
+   "language": "Hinglish",
+   "text": "Website/App review"
+  },
+  {
+   "key": "step:Website/App review",
+   "language": "Hindi",
+   "text": "वेबसाइट/ऐप समीक्षा"
+  },
+  {
+   "key": "step:Website/App review",
+   "language": "Tamil",
+   "text": "இணையதளம்/ஆப் மதிப்பாய்வு"
+  },
+  {
+   "key": "step:Website/App review",
+   "language": "Kannada",
+   "text": "ವೆಬ್‌ಸೈಟ್/ಆ್ಯಪ್ ಪರಿಶೀಲನೆ"
+  },
+  {
+   "key": "step:Website/App review",
+   "language": "Marathi",
+   "text": "वेबसाइट/ॲप पुनरावलोकन"
+  },
+  {
+   "key": "time_many",
+   "language": "English",
+   "text": "Most applicants fix this in about {days} days."
+  },
+  {
+   "key": "time_many",
+   "language": "Hinglish",
+   "text": "Zyada tar merchants ise lagbhag {days} din mein theek kar lete hain."
+  },
+  {
+   "key": "time_many",
+   "language": "Hindi",
+   "text": "ज़्यादातर आवेदक इसे लगभग {days} दिन में ठीक कर लेते हैं।"
+  },
+  {
+   "key": "time_many",
+   "language": "Tamil",
+   "text": "பெரும்பாலானவர்கள் இதை சுமார் {days} நாட்களில் சரிசெய்கிறார்கள்."
+  },
+  {
+   "key": "time_many",
+   "language": "Kannada",
+   "text": "ಹೆಚ್ಚಿನವರು ಇದನ್ನು ಸುಮಾರು {days} ದಿನಗಳಲ್ಲಿ ಸರಿಪಡಿಸುತ್ತಾರೆ."
+  },
+  {
+   "key": "time_many",
+   "language": "Marathi",
+   "text": "बहुतेक अर्जदार हे साधारण {days} दिवसांत दुरुस्त करतात."
+  },
+  {
+   "key": "time_one",
+   "language": "English",
+   "text": "Most applicants fix this in about {days} day."
+  },
+  {
+   "key": "time_one",
+   "language": "Hinglish",
+   "text": "Zyada tar merchants ise lagbhag {days} din mein theek kar lete hain."
+  },
+  {
+   "key": "time_one",
+   "language": "Hindi",
+   "text": "ज़्यादातर आवेदक इसे लगभग {days} दिन में ठीक कर लेते हैं।"
+  },
+  {
+   "key": "time_one",
+   "language": "Tamil",
+   "text": "பெரும்பாலானவர்கள் இதை சுமார் {days} நாளில் சரிசெய்கிறார்கள்."
+  },
+  {
+   "key": "time_one",
+   "language": "Kannada",
+   "text": "ಹೆಚ್ಚಿನವರು ಇದನ್ನು ಸುಮಾರು {days} ದಿನದಲ್ಲಿ ಸರಿಪಡಿಸುತ್ತಾರೆ."
+  },
+  {
+   "key": "time_one",
+   "language": "Marathi",
+   "text": "बहुतेक अर्जदार हे साधारण {days} दिवसात दुरुस्त करतात."
+  }
+ ],
+ "kw": [
+  {
+   "order": 1,
+   "pattern": "sanction|screening|compliance",
+   "code": "R12",
+   "note": "Screening or compliance wording"
+  },
+  {
+   "order": 2,
+   "pattern": "^(?=.*differs)(?=.*website)",
+   "code": "R11",
+   "note": "Category differs from website (must come before the generic category rule)"
+  },
+  {
+   "order": 3,
+   "pattern": "restricted|category",
+   "code": "R10",
+   "note": "Restricted or unsupported category"
+  },
+  {
+   "order": 4,
+   "pattern": "gst",
+   "code": "R02",
+   "note": "GST problems"
+  },
+  {
+   "order": 5,
+   "pattern": "ifsc|verify nahi|account number",
+   "code": "R04",
+   "note": "Bank verification failed (before the bank-name rule)"
+  },
+  {
+   "order": 6,
+   "pattern": "bank|account name",
+   "code": "R03",
+   "note": "Bank account name mismatch"
+  },
+  {
+   "order": 7,
+   "pattern": "pan",
+   "code": "R01",
+   "note": "PAN name mismatch"
+  },
+  {
+   "order": 8,
+   "pattern": "blur|not readable|clear nahi|unreadable|cropped",
+   "code": "R05",
+   "note": "Document unreadable"
+  },
+  {
+   "order": 9,
+   "pattern": "policy pages|refund policy|privacy|terms",
+   "code": "R06",
+   "note": "Website policy pages missing"
+  },
+  {
+   "order": 10,
+   "pattern": "khul nahi|requires login|not live",
+   "code": "R07",
+   "note": "Website not live"
+  },
+  {
+   "order": 11,
+   "pattern": "address",
+   "code": "R08",
+   "note": "Address proof"
+  },
+  {
+   "order": 12,
+   "pattern": "signatory",
+   "code": "R09",
+   "note": "Signatory details"
+  }
+ ],
+ "safety": [
+  {
+   "check_id": "S1",
+   "applies_to": "ALL",
+   "type": "forbid",
+   "pattern": "[{}]",
+   "fail_message": "unresolved placeholder"
+  },
+  {
+   "check_id": "S2",
+   "applies_to": "R10,R12",
+   "type": "forbid",
+   "pattern": "sanction|screening|compliance|watch ?list|negative list|black ?list|risk",
+   "fail_message": "mentions screening/compliance wording"
+  },
+  {
+   "check_id": "S3",
+   "applies_to": "R10",
+   "type": "forbid",
+   "pattern": "instead|alternative|another category|different category|change (your )?category|resubmit|re-submit|reappl|re-appl|workaround|try again|\\[resume link\\]",
+   "fail_message": "suggests workaround or resubmission"
+  },
+  {
+   "check_id": "S4",
+   "applies_to": "R12",
+   "type": "forbid",
+   "pattern": "\\[resume link\\]",
+   "fail_message": "resume link in compliance message"
+  },
+  {
+   "check_id": "S5",
+   "applies_to": "FIX",
+   "type": "require",
+   "pattern": "\\[resume link\\]",
+   "fail_message": "missing resume link"
+  },
+  {
+   "check_id": "S6",
+   "applies_to": "ALL",
+   "type": "forbid",
+   "pattern": "guarantee|assured|will be approved|approved within|waive|waiver|within \\d+ ?(hour|day)",
+   "fail_message": "promise or guarantee wording"
+  }
+ ],
+ "config": {
+  "USE_GEMINI": "Yes",
+  "GEMINI_MODEL": "gemini-3.5-flash-lite",
+  "NATIVE_REVIEW_LANGUAGES": "Tamil,Kannada,Marathi",
+  "PAUSE_MS_BETWEEN_AI_CALLS": 1500
+ }
+}
