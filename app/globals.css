@@ -62,3 +62,12 @@ button:disabled { opacity:.55; cursor:wait; }
 .err { background:#fdecec; border:1px solid #f3b8b8; color:var(--bad); padding:8px 12px; border-radius:8px; font-size:13px; margin-bottom:10px; }
 footer { margin-top:20px; }
 @media (max-width:860px) { .layout { grid-template-columns:1fr; } .detail { position:static; } .list { max-height:360px; } }
+.lbl { font-size:13px; font-weight:600; }
+select { font:inherit; font-size:13px; padding:5px 10px; border:1px solid var(--line); border-radius:16px; background:#fff; color:var(--ink); max-width:260px; }
+.chip.opened { background:#e3edfb; color:var(--blue); }
+.approve { display:flex; gap:8px; align-items:flex-start; font-size:13px; margin:2px 0 10px; }
+.sendrow { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:8px; }
+.send { display:inline-block; font-size:13px; font-weight:600; padding:8px 16px; border-radius:7px; color:#fff; text-decoration:none; }
+.send.wa { background:#1f9d55; } .send.sms { background:#2b6cb0; } .send.mail { background:#6b3fa0; }
+.send.off { background:#e6e9ee; color:#8b95a3; cursor:not-allowed; }
+.sendnote { margin-bottom:10px; }
