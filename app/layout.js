@@ -2,7 +2,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'Onboarding Recovery Agent',
-  description: 'Razorpay Campus AI Build-a-thon, Problem 3. Synthetic data only.',
+  description: 'Finds why merchant applications stalled and drafts safe nudges for a person to approve. Synthetic data only.',
 };
 
 export default function RootLayout({ children }) {

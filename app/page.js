@@ -48,9 +48,7 @@ export default function Home() {
   const [codeFilter, setCodeFilter] = useState('ALL');
   const [selected, setSelected] = useState(null);
   const [rerunning, setRerunning] = useState(false);
-  const [link, setLink] = useState('');
   const [approved, setApproved] = useState({});
-  const [opened, setOpened] = useState({});
   const [text, setText] = useState('');
   const [classified, setClassified] = useState(null);
 
@@ -103,14 +101,19 @@ export default function Home() {
       compliance: results.filter((r) => r.reason_code === 'R12').length,
       pass: results.filter((r) => r.safety_check === 'PASS').length,
       hold: results.filter((r) => r.send_status === 'HOLD').length,
-      opened: Object.keys(opened).length,
     };
-  }, [results, opened]);
+  }, [results]);
 
   const codeCounts = useMemo(() => {
     const m = {};
     results.forEach((r) => { m[r.reason_code] = (m[r.reason_code] || 0) + 1; });
     return Object.keys(m).sort().map((c) => [c, m[c]]);
+  }, [results]);
+
+  const topCauses = useMemo(() => {
+    const m = {};
+    results.filter((r) => r.recoverable === 'Yes').forEach((r) => { m[r.reason_code] = (m[r.reason_code] || 0) + 1; });
+    return Object.entries(m).sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1)).slice(0, 3);
   }, [results]);
 
   const FILTERS = [
@@ -129,60 +132,58 @@ export default function Home() {
   });
   const cur = results.find((r) => r.application_id === selected) || null;
 
-  // ---- sending (opens the app with the message filled in; a person presses send) ----
-  let msg = '', needsLink = false, linkMissing = false, optedIn = false, blocked = '', ok = false, urls = {};
+  // ---- send buttons are a demo: they show when sending would be allowed, but do nothing ----
+  let msg = '', optedIn = false, blocked = '', ok = false;
   if (cur) {
-    needsLink = cur.drafted_nudge.includes('[resume link]');
-    linkMissing = needsLink && !link.trim();
-    msg = needsLink && link.trim() ? cur.drafted_nudge.split('[resume link]').join(link.trim()) : cur.drafted_nudge;
+    msg = cur.drafted_nudge;
     optedIn = cur.channel.startsWith('WhatsApp');
-    if (cur.reason_code === 'R12') blocked = 'Compliance decides whether anything is sent for this case. Nothing can be sent from here.';
+    if (cur.reason_code === 'R12') blocked = 'Compliance decides whether anything is sent for this case.';
     else if (!cur.drafted_nudge) blocked = 'There is no message for this case. A person must review it.';
     else if (cur.safety_check !== 'PASS') blocked = 'This message failed a safety check.';
-    else if (linkMissing) blocked = 'Paste the real resume link in the box at the top first. The message has a [resume link] placeholder.';
     else if (!approved[cur.application_id]) blocked = 'Tick the box to confirm you have read this message and approve it.';
     ok = !blocked;
-    const enc = encodeURIComponent(msg);
-    urls = {
-      wa: `https://wa.me/?text=${enc}`,
-      sms: `sms:?body=${enc}`,
-      mail: `mailto:?subject=${encodeURIComponent('Your Razorpay application')}&body=${enc}`,
-    };
   }
-  const mark = (ch) => setOpened((o) => ({ ...o, [cur.application_id]: [...new Set([...(o[cur.application_id] || []), ch])] }));
-  const SendBtn = ({ id, label, href, extraOff }) => (ok && !extraOff
-    ? <a className={`send ${id}`} href={href} target="_blank" rel="noopener noreferrer" onClick={() => mark(label)}>{label}</a>
-    : <span className="send off" aria-disabled="true" title={extraOff || blocked}>{label}</span>);
+  const ICONS = {
+    wa: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 20l1.2-5A8.4 8.4 0 1 1 21 11.5z" /></svg>,
+    sms: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="14" rx="2" /><path d="M7 9h10M7 13h6" /></svg>,
+    mail: <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" /></svg>,
+  };
+  const SendBtn = ({ id, label, extraOff }) => (ok && !extraOff
+    ? <button type="button" className={`send ${id}`}>{ICONS[id]}{label}</button>
+    : <button type="button" className="send off" disabled title={extraOff || blocked}>{ICONS[id]}{label}</button>);
 
   return (
     <main>
       <header className="top">
         <div>
-          <div className="badge">Razorpay Campus AI Build-a-thon · Problem 3 · synthetic data</div>
           <h1>Onboarding Recovery Agent</h1>
           <p className="sub">A tool for Razorpay&apos;s onboarding team. It finds out why merchant applications stalled, decides what can be recovered, and drafts a safe nudge in the applicant&apos;s own language. A person approves each message and presses send.</p>
+        <ol className="steps">
+          {STEPS.map((s) => (
+            <li key={s.n}><span className="num">{s.n}</span><div><b>{s.t}</b><span>{s.d}</span></div></li>
+          ))}
+        </ol>
         </div>
-        <div className="aibox">
-          <label className="lbl" htmlFor="link">Resume link to put in messages</label>
-          <input id="link" type="text" placeholder="https://… (paste the real link)" value={link} onChange={(e) => setLink(e.target.value)} />
-          <div className="note">The data pack has no real links, so messages carry a [resume link] placeholder until you paste one here.</div>
-        </div>
+        <aside className="hero">
+          <div className="hl">Recoverable volume</div>
+          <div className="hbig">{loaded ? `Rs ${stats.tpv} lakh` : '…'}<small> / month expected</small></div>
+          <div className="hsub">Applicants&apos; own estimate of monthly volume, in applications a nudge can bring back.</div>
+          <div className="hl hl2">Top causes · click to filter</div>
+          {topCauses.map(([c, n]) => (
+            <button key={c} className="crow" onClick={() => { setCodeFilter(c); setFilter('ALL'); }}>
+              <span className="cc">{c}</span><span className="cn">{CODE_LABELS[c] || c}</span><span className="ck">{n}</span>
+            </button>
+          ))}
+        </aside>
       </header>
-
-      <ol className="steps">
-        {STEPS.map((s) => (
-          <li key={s.n}><span className="num">{s.n}</span><div><b>{s.t}</b><span>{s.d}</span></div></li>
-        ))}
-      </ol>
 
       <section className="cards">
         <div className="card c-blue"><b>{stats.total}</b><span>stalled or rejected applications</span></div>
-        <div className="card c-green"><b>{stats.recoverable}</b><span>recoverable · Rs {stats.tpv} lakh/month expected</span></div>
+        <div className="card c-green"><b>{stats.recoverable}</b><span>recoverable with a nudge</span></div>
         <div className="card c-gray"><b>{stats.close}</b><span>close politely (restricted)</span></div>
         <div className="card c-purple"><b>{stats.compliance}</b><span>route to Compliance</span></div>
         <div className="card c-green"><b>{stats.pass}/{stats.total}</b><span>passed every safety check</span></div>
         <div className="card c-amber"><b>{stats.hold}</b><span>on hold for a human</span></div>
-        <div className="card c-blue"><b>{stats.opened}</b><span>opened for sending this session</span></div>
       </section>
 
       <div className="bar">
@@ -207,10 +208,9 @@ export default function Home() {
           {!loaded && !error && <div className="empty">Running the agent…</div>}
           {shown.map((r) => {
             const ri = routeInfo(r);
-            const o = opened[r.application_id];
             return (
               <button key={r.application_id} className={`item ${selected === r.application_id ? 'sel' : ''}`} onClick={() => setSelected(r.application_id)}>
-                <div className="l1"><b>{r.application_id}</b><span className="lang">{r.preferred_language}</span>{o && <span className="chip opened">Opened</span>}<span className={`chip ${r.send_status === 'HOLD' ? 'hold' : 'ready'}`}>{r.send_status === 'HOLD' ? 'On hold' : 'Ready'}</span></div>
+                <div className="l1"><b>{r.application_id}</b><span className="lang">{r.preferred_language}</span><span className={`chip ${r.send_status === 'HOLD' ? 'hold' : 'ready'}`}>{r.send_status === 'HOLD' ? 'On hold' : 'Ready'}</span></div>
                 <div className="l2"><span className={`code ${ri.cls}`}>{r.reason_code}</span><span className="cause">{r.diagnosed_cause}</span></div>
               </button>
             );
@@ -241,12 +241,11 @@ export default function Home() {
 
               <label className="approve"><input type="checkbox" disabled={cur.reason_code === 'R12' || !cur.drafted_nudge} checked={!!approved[cur.application_id]} onChange={(e) => setApproved((a) => ({ ...a, [cur.application_id]: e.target.checked }))} /> I have read this message and approve sending it</label>
               <div className="sendrow">
-                <SendBtn id="wa" label="WhatsApp" href={urls.wa} extraOff={!optedIn && cur.reason_code !== 'R12' ? 'This applicant has not opted in to WhatsApp. Use SMS or email.' : ''} />
-                <SendBtn id="sms" label="SMS" href={urls.sms} />
-                <SendBtn id="mail" label="Email" href={urls.mail} />
+                <SendBtn id="wa" label="WhatsApp" extraOff={!optedIn && cur.reason_code !== 'R12' ? 'This applicant has not opted in to WhatsApp. Use SMS or email.' : ''} />
+                <SendBtn id="sms" label="SMS" />
+                <SendBtn id="mail" label="Email" />
               </div>
-              <div className="note sendnote">{blocked ? `Send buttons are off: ${blocked}` : 'Each button opens WhatsApp, your SMS app or your email app with this message filled in. You choose the recipient and press send there. The data pack has no phone numbers or email addresses, so nothing is sent automatically.'}</div>
-              {opened[cur.application_id] && <div className="note">Opened for sending via: {opened[cur.application_id].join(', ')}</div>}
+              <div className="note sendnote">{blocked ? `Send buttons are off: ${blocked}` : 'Sending switches on once contact details are connected. Nothing is sent from this page.'}</div>
               <button className="alt" onClick={() => rerun(cur.application_id)} disabled={rerunning}>{rerunning ? 'Running…' : 'Re-run agent on this application'}</button>
             </>
           )}
@@ -267,7 +266,7 @@ export default function Home() {
         )}
       </section>
 
-      <footer className="note">Limits: no AI model is used in this app; every decision comes from rules you can read. [resume link] is a placeholder until you paste a link. Tamil, Kannada and Marathi wording needs a native-speaker review. 21 of 75 rows have inactivity days longer than days since signup (used as given). The email subject is the same English line for every language.</footer>
+      <footer className="note">Limits: all data is synthetic. No AI model is used in this app; every decision comes from rules you can read. [resume link] marks where the real link goes once the system sends the message. Tamil, Kannada and Marathi wording needs a native-speaker review. 21 of 75 rows have inactivity days longer than days since signup (used as given). The email subject is the same English line for every language.</footer>
     </main>
   );
 }
