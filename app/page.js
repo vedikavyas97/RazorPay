@@ -20,10 +20,15 @@ const CODE_LABELS = {
   R13: 'Abandoned application',
 };
 
-const EXAMPLES = [
-  'Doc blurred and cropped, cannot verify',
-  'PAN ka naam aur application ka naam match nahi kar raha',
-  'Something odd happened with my file',
+const LANGS = ['English', 'Hinglish', 'Hindi', 'Tamil', 'Kannada', 'Marathi'];
+const STEP_NAMES = ['Business details', 'KYC docs', 'Bank verification', 'Website/App review'];
+const BLANK = { business_type: '', preferred_language: 'English', whatsapp_opted_in: 'Yes', step_reached: 'KYC docs', expected_monthly_tpv_inr_lakh: '', days_since_last_activity: '', rejection_code: '', rejection_message: '' };
+const PRESETS = [
+  ['Blurred document, no code', { business_type: 'Proprietorship', preferred_language: 'English', whatsapp_opted_in: 'Yes', step_reached: 'KYC docs', expected_monthly_tpv_inr_lakh: '8', days_since_last_activity: '5', rejection_code: '', rejection_message: 'Doc blurred and cropped, cannot verify' }],
+  ['Hinglish, PAN mismatch', { business_type: 'Private Limited', preferred_language: 'Hinglish', whatsapp_opted_in: 'No', step_reached: 'KYC docs', expected_monthly_tpv_inr_lakh: '25', days_since_last_activity: '9', rejection_code: '', rejection_message: 'PAN ka naam aur application ka naam match nahi kar raha' }],
+  ['Tamil, stopped at bank step', { business_type: 'Partnership', preferred_language: 'Tamil', whatsapp_opted_in: 'Yes', step_reached: 'Bank verification', expected_monthly_tpv_inr_lakh: '14', days_since_last_activity: '12', rejection_code: '', rejection_message: '' }],
+  ['Restricted category (R10)', { business_type: 'Private Limited', preferred_language: 'English', whatsapp_opted_in: 'Yes', step_reached: 'Website/App review', expected_monthly_tpv_inr_lakh: '30', days_since_last_activity: '3', rejection_code: 'R10', rejection_message: '' }],
+  ['Unclear note', { business_type: 'LLP', preferred_language: 'English', whatsapp_opted_in: 'No', step_reached: 'KYC docs', expected_monthly_tpv_inr_lakh: '6', days_since_last_activity: '4', rejection_code: '', rejection_message: 'Something odd happened with my file' }],
 ];
 
 function toCsv(rows) {
@@ -49,8 +54,11 @@ export default function Home() {
   const [selected, setSelected] = useState(null);
   const [rerunning, setRerunning] = useState(false);
   const [approved, setApproved] = useState({});
-  const [text, setText] = useState('');
-  const [classified, setClassified] = useState(null);
+  const [newApps, setNewApps] = useState([]);
+  const [newIds, setNewIds] = useState([]);
+  const [form, setForm] = useState(BLANK);
+  const [adding, setAdding] = useState(false);
+  const setF = (k) => (e) => setForm((f) => ({ ...f, [k]: e.target.value }));
 
   async function post(url, body) {
     const res = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) });
@@ -59,31 +67,45 @@ export default function Home() {
     return json;
   }
 
-  async function run() {
+  async function run(extra = newApps) {
     setBusy(true); setError('');
     try {
-      const j = await post('/api/run', {});
-      setResults(j.results); setLoaded(true);
+      const j = await post('/api/run', { extra });
+      setResults(j.results); setNewIds(j.newIds || []); setLoaded(true);
       setSelected((s) => s || (j.results[0] && j.results[0].application_id) || null);
-    } catch (e) { setError(String(e.message || e)); }
-    setBusy(false);
+      return true;
+    } catch (e) { setError(String(e.message || e)); return false; }
+    finally { setBusy(false); }
   }
 
-  useEffect(() => { run(); }, []); // eslint-disable-line
+  useEffect(() => { run([]); }, []); // eslint-disable-line
+
+  async function addApp(e) {
+    e.preventDefault();
+    setAdding(true);
+    const next = [...newApps, form];
+    const ok = await run(next);
+    if (ok) {
+      setNewApps(next); setForm(BLANK); setFilter('ALL'); setCodeFilter('ALL');
+      setSelected(`NEW-${String(next.length).padStart(3, '0')}`);
+      setTimeout(() => document.querySelector('.detail')?.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+    }
+    setAdding(false);
+  }
+
+  async function clearNew() {
+    setNewApps([]); setSelected(null);
+    await run([]);
+  }
 
   async function rerun(id) {
     setRerunning(true); setError('');
+    if (id.startsWith('NEW-')) { await run(); setRerunning(false); return; }
     try {
       const j = await post('/api/preview', { application_id: id });
       setResults((rs) => rs.map((r) => (r.application_id === id ? { ...j.result, priority_rank: r.priority_rank } : r)));
     } catch (e) { setError(String(e.message || e)); }
     setRerunning(false);
-  }
-
-  async function classify(t) {
-    const value = (t ?? text).trim();
-    setError(''); setClassified(null);
-    try { setClassified(await post('/api/classify', { text: value })); } catch (e) { setError(String(e.message || e)); }
   }
 
   function download() {
@@ -197,7 +219,7 @@ export default function Home() {
           </select>
         </div>
         <div className="actions">
-          <button onClick={run} disabled={busy}>{busy ? 'Running…' : 'Run agent again'}</button>
+          <button onClick={() => run()} disabled={busy}>{busy ? 'Running…' : 'Run agent again'}</button>
           <button className="alt" onClick={download} disabled={!results.length}>Download CSV</button>
         </div>
       </div>
@@ -210,7 +232,7 @@ export default function Home() {
             const ri = routeInfo(r);
             return (
               <button key={r.application_id} className={`item ${selected === r.application_id ? 'sel' : ''}`} onClick={() => setSelected(r.application_id)}>
-                <div className="l1"><b>{r.application_id}</b><span className="lang">{r.preferred_language}</span><span className={`chip ${r.send_status === 'HOLD' ? 'hold' : 'ready'}`}>{r.send_status === 'HOLD' ? 'On hold' : 'Ready'}</span></div>
+                <div className="l1"><b>{r.application_id}</b><span className="lang">{r.preferred_language}{newIds.includes(r.application_id) && <em className="newtag">New</em>}</span><span className={`chip ${r.send_status === 'HOLD' ? 'hold' : 'ready'}`}>{r.send_status === 'HOLD' ? 'On hold' : 'Ready'}</span></div>
                 <div className="l2"><span className={`code ${ri.cls}`}>{r.reason_code}</span><span className="cause">{r.diagnosed_cause}</span></div>
               </button>
             );
@@ -252,21 +274,32 @@ export default function Home() {
         </aside>
       </section>
 
-      <section className="demo">
-        <h2>Try a reviewer note</h2>
-        <p className="note">Paste a rejection note and see which reason code the rules pick. If nothing matches, or the code was inferred from free text, a person decides.</p>
-        <div className="chips">{EXAMPLES.map((e) => <button key={e} className="pill" onClick={() => { setText(e); classify(e); }}>{e}</button>)}</div>
-        <textarea placeholder="e.g. Doc blurred and cropped, cannot verify" value={text} onChange={(e) => setText(e.target.value)} />
-        <div className="row"><button onClick={() => classify()}>Classify</button></div>
-        {classified && (
-          <div className="result">
-            <div><span>Rules</span><b>{classified.ruleCode ? `${classified.ruleCode}: ${classified.ruleReason}` : 'no match'}</b></div>
-            <div><span>Verdict</span><b>{classified.verdict}</b></div>
+      <section className="demo" id="new">
+        <h2>Add a new application</h2>
+        <p className="note">The agent works on any application, not only the 100 in the data pack. Fill in what the onboarding system would show and it is diagnosed, drafted and checked the same way. If the code is blank, the reviewer text is read by the rules; if nothing matches, a person decides. New entries last for this browser session only.</p>
+        <div className="chips">{PRESETS.map(([l, v]) => <button key={l} type="button" className="pill" onClick={() => setForm(v)}>{l}</button>)}</div>
+        <form className="nform" onSubmit={addApp}>
+          <label>Business type<input type="text" required maxLength={60} value={form.business_type} onChange={setF('business_type')} placeholder="e.g. Proprietorship" /></label>
+          <label>Language<select value={form.preferred_language} onChange={setF('preferred_language')}>{LANGS.map((l) => <option key={l}>{l}</option>)}</select></label>
+          <label>Opted in to WhatsApp<select value={form.whatsapp_opted_in} onChange={setF('whatsapp_opted_in')}><option>Yes</option><option>No</option></select></label>
+          <label>Stopped at<select value={form.step_reached} onChange={setF('step_reached')}>{STEP_NAMES.map((l) => <option key={l}>{l}</option>)}</select></label>
+          <label>Expected monthly volume (Rs lakh)<input type="number" required min="0" step="any" value={form.expected_monthly_tpv_inr_lakh} onChange={setF('expected_monthly_tpv_inr_lakh')} /></label>
+          <label>Days inactive<input type="number" required min="0" step="1" value={form.days_since_last_activity} onChange={setF('days_since_last_activity')} /></label>
+          <label>Rejection code
+            <select value={form.rejection_code} onChange={setF('rejection_code')}>
+              <option value="">None / not known</option>
+              {Object.entries(CODE_LABELS).filter(([c]) => c !== 'R13').map(([c, l]) => <option key={c} value={c}>{c} · {l}</option>)}
+            </select>
+          </label>
+          <label className="wide">Reviewer note (optional)<textarea maxLength={500} value={form.rejection_message} onChange={setF('rejection_message')} placeholder="e.g. Doc blurred and cropped, cannot verify" /></label>
+          <div className="wide row">
+            <button type="submit" disabled={adding}>{adding ? 'Running…' : 'Add and run agent'}</button>
+            {newApps.length > 0 && <button type="button" className="alt" onClick={clearNew}>Clear {newApps.length} added</button>}
           </div>
-        )}
+        </form>
       </section>
 
-      <footer className="note">Limits: all data is synthetic. No AI model is used in this app; every decision comes from rules you can read. [resume link] marks where the real link goes once the system sends the message. Tamil, Kannada and Marathi wording needs a native-speaker review. 21 of 75 rows have inactivity days longer than days since signup (used as given). The email subject is the same English line for every language.</footer>
+      <footer className="note">Limits: all data is synthetic. No AI model is used in this app; every decision comes from rules you can read. [resume link] marks where the real link goes once the system sends the message. Added applications are not saved; they disappear when you reload. Tamil, Kannada and Marathi wording needs a native-speaker review. 21 of 75 rows have inactivity days longer than days since signup (used as given). The email subject is the same English line for every language.</footer>
     </main>
   );
 }

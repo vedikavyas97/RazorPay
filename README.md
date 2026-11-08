@@ -10,6 +10,8 @@ For each stalled or rejected application the agent:
 4. Drafts the nudge in the applicant's language from fixed templates (`data/agentData.json`).
 5. Runs safety checks (no screening wording, no workarounds, no promises, right language script, WhatsApp opt-in) and marks each draft READY or HOLD.
 
+New applications can be added from the form on the page (not saved between sessions) and go through the same steps.
+
 Nothing is sent automatically. A person reads each draft, approves it and presses send. Cases for Compliance (R12) cannot be sent from the app.
 
 ## What is AI and what is not
@@ -39,5 +41,5 @@ Open http://localhost:3000
 - Tamil, Kannada and Marathi wording has not been read by a native speaker.
 - 21 of 75 non-activated rows have `days_since_last_activity` larger than the days since signup. The field is used as given.
 - The keyword rules were written after seeing the 49 coded messages, so matching all 49 is not an independent test.
-- The send buttons open WhatsApp, the SMS app or the email app with the message filled in; a person picks the recipient and presses send. The data has no phone numbers or email addresses, so nothing is sent automatically.
-- Checked in a build and by calling the API routes. The page was not checked visually in a browser.
+- The send buttons are a demo and do nothing. The data has no phone numbers or email addresses, so nothing is sent.
+- Applications added through the form live in the browser session only; there is no database.
