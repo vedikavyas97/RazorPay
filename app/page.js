@@ -21,6 +21,7 @@ const CODE_LABELS = {
 const REVIEW_TYPES = ['Low-confidence diagnosis', 'Blank or ambiguous reviewer comment', 'Compliance escalation', 'Closure sign-off', 'Language review', 'Safety check failed'];
 const LANGS = ['English', 'Hinglish', 'Hindi', 'Tamil', 'Kannada', 'Marathi'];
 const STEP_NAMES = ['Business details', 'KYC docs', 'Bank verification', 'Website/App review'];
+const BIZ = ['Proprietorship', 'Partnership', 'Private Limited', 'LLP', 'Trust / NGO'];
 const BLANK = { business_type: '', preferred_language: 'English', whatsapp_opted_in: 'Yes', step_reached: 'KYC docs', expected_monthly_tpv_inr_lakh: '', days_since_last_activity: '', rejection_code: '', rejection_message: '' };
 const PRESETS = [
   ['Blurred document, no code', { business_type: 'Proprietorship', preferred_language: 'English', whatsapp_opted_in: 'Yes', step_reached: 'KYC docs', expected_monthly_tpv_inr_lakh: '8', days_since_last_activity: '5', rejection_code: '', rejection_message: 'Doc blurred and cropped, cannot verify' }],
@@ -343,7 +344,14 @@ export default function Home() {
         <p className="note">The agent works on any application, not only the 100 in the data pack. Fill in what the onboarding system would show and it is diagnosed, drafted and checked the same way. If the code is blank, the reviewer text is read by the rules; if nothing matches, a person decides. New entries last for this browser session only.</p>
         <div className="chips">{PRESETS.map(([l, v]) => <button key={l} type="button" className="pill" onClick={() => setForm(v)}>{l}</button>)}</div>
         <form className="nform" onSubmit={addApp}>
-          <label>Business type<input type="text" required maxLength={60} value={form.business_type} onChange={setF('business_type')} placeholder="e.g. Proprietorship" /></label>
+          <label>Business type
+            <select required value={BIZ.includes(form.business_type) ? form.business_type : (form.other ? 'Other' : '')} onChange={(e) => { const v = e.target.value; setForm((f) => (v === 'Other' ? { ...f, business_type: '', other: true } : { ...f, business_type: v, other: false })); }}>
+              <option value="" disabled>Select…</option>
+              {BIZ.map((b) => <option key={b}>{b}</option>)}
+              <option>Other</option>
+            </select>
+          </label>
+          {form.other && <label>Other business type<input type="text" required maxLength={60} value={form.business_type} onChange={setF('business_type')} placeholder="e.g. Society, HUF" /></label>}
           <label>Language<select value={form.preferred_language} onChange={setF('preferred_language')}>{LANGS.map((l) => <option key={l}>{l}</option>)}</select></label>
           <label>Opted in to WhatsApp<select value={form.whatsapp_opted_in} onChange={setF('whatsapp_opted_in')}><option>Yes</option><option>No</option></select></label>
           <label>Stopped at<select value={form.step_reached} onChange={setF('step_reached')}>{STEP_NAMES.map((l) => <option key={l}>{l}</option>)}</select></label>
