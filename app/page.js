@@ -3,7 +3,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { buildMetrics } from '../lib/metrics.js';
 import { toCsv, buildReport } from '../lib/report.js';
-import { METHOD } from '../lib/methodology.js';
 
 const STEPS = [
   { n: 1, t: 'Read', d: 'Takes each stalled or rejected application (75 of 100). Activated ones are skipped.' },
@@ -49,7 +48,6 @@ export default function Home() {
   const [selected, setSelected] = useState(null);
   const [rerunning, setRerunning] = useState(false);
   const [activated, setActivated] = useState(0);
-  const [aiConnected, setAiConnected] = useState(false);
   const [view, setView] = useState('all');
   const [reviewType, setReviewType] = useState('ALL');
   const [prio, setPrio] = useState('ALL');
@@ -75,7 +73,7 @@ export default function Home() {
     setBusy(true); setError('');
     try {
       const j = await post('/api/run', { extra });
-      setResults(j.results); setNewIds(j.newIds || []); setActivated(j.activated || 0); setAiConnected(!!j.aiConnected); setLoaded(true);
+      setResults(j.results); setNewIds(j.newIds || []); setActivated(j.activated || 0); setLoaded(true);
       setSelected((s) => s || (j.results[0] && j.results[0].application_id) || null);
       return true;
     } catch (e) { setError(String(e.message || e)); return false; }
@@ -364,17 +362,6 @@ export default function Home() {
           </div>
         </form>
       </section>
-
-      <details className="demo method">
-        <summary><b>How decisions are made: rules vs AI</b> <span className={`badge ${aiConnected ? '' : 'off'}`}>AI model connected: {aiConnected ? 'yes' : 'no'}</span></summary>
-        <p className="note">Everything below the line runs as plain code today. The model hook is in lib/llm.js and is empty.</p>
-        <div className="mcols">
-          <div><h3>Rule-based (running now)</h3><ul>{METHOD.rules.map((x) => <li key={x}>{x}</li>)}</ul></div>
-          <div><h3>AI-assisted (not connected)</h3><ul>{METHOD.ai.map((x) => <li key={x}>{x}</li>)}</ul>
-            <h3>Diagnosis confidence</h3><ul>{METHOD.confidence.map((x) => <li key={x}>{x}</li>)}</ul>
-            <h3>Outreach priority</h3><ul>{METHOD.priority.map((x) => <li key={x}>{x}</li>)}</ul></div>
-        </div>
-      </details>
 
       <footer className="note">Limits: all data is synthetic. No AI model is used in this app; every decision comes from rules you can read. [resume link] marks where the real link goes once the system sends the message. Tamil, Kannada and Marathi wording and subjects have not been checked by a native speaker. 21 of 75 rows have inactivity days longer than days since signup (used as given). Keyword rules were written after seeing the coded notes. Priority weights are the builder&apos;s judgment. Added applications and reviewer decisions are not saved; they disappear when you reload.</footer>
     </main>
