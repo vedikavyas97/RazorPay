@@ -84,9 +84,10 @@ export default function Home() {
 
   async function addApp(e) {
     e.preventDefault();
-    setAdding(true);
+    setAdding(true); setFormError('');
     const next = [...newApps, form];
     const ok = await run(next);
+    if (!ok) setFormError('Could not add this application. Check the fields and try again.');
     if (ok) {
       setNewApps(next); setForm(BLANK); setFilter('ALL'); setCodeFilter('ALL');
       setSelected(`NEW-${String(next.length).padStart(3, '0')}`);
@@ -347,7 +348,7 @@ export default function Home() {
           <label>Language<select value={form.preferred_language} onChange={setF('preferred_language')}>{LANGS.map((l) => <option key={l}>{l}</option>)}</select></label>
           <label>Opted in to WhatsApp<select value={form.whatsapp_opted_in} onChange={setF('whatsapp_opted_in')}><option>Yes</option><option>No</option></select></label>
           <label>Stopped at<select value={form.step_reached} onChange={setF('step_reached')}>{STEP_NAMES.map((l) => <option key={l}>{l}</option>)}</select></label>
-          <label>Expected monthly volume (Rs lakh)<input type="number" required min="0" step="any" value={form.expected_monthly_tpv_inr_lakh} onChange={setF('expected_monthly_tpv_inr_lakh')} /></label>
+          <label>Expected monthly volume (Rs lakh, e.g. 12.5)<input type="number" required min="0" max="100000" step="any" value={form.expected_monthly_tpv_inr_lakh} onChange={setF('expected_monthly_tpv_inr_lakh')} /></label>
           <label>Days inactive<input type="number" required min="0" step="1" value={form.days_since_last_activity} onChange={setF('days_since_last_activity')} /></label>
           <label>Rejection code
             <select value={form.rejection_code} onChange={setF('rejection_code')}>
@@ -356,6 +357,7 @@ export default function Home() {
             </select>
           </label>
           <label className="wide">Reviewer note (optional)<textarea maxLength={500} value={form.rejection_message} onChange={setF('rejection_message')} placeholder="e.g. Doc blurred and cropped, cannot verify" /></label>
+          {error && <div className="wide err">{error}</div>}
           <div className="wide row">
             <button type="submit" disabled={adding}>{adding ? 'Running…' : 'Add and run agent'}</button>
             {newApps.length > 0 && <button type="button" className="alt" onClick={clearNew}>Clear {newApps.length} added</button>}
