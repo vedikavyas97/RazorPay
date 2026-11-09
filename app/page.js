@@ -84,10 +84,9 @@ export default function Home() {
 
   async function addApp(e) {
     e.preventDefault();
-    setAdding(true); setFormError('');
+    setAdding(true);
     const next = [...newApps, form];
     const ok = await run(next);
-    if (!ok) setFormError('Could not add this application. Check the fields and try again.');
     if (ok) {
       setNewApps(next); setForm(BLANK); setFilter('ALL'); setCodeFilter('ALL');
       setSelected(`NEW-${String(next.length).padStart(3, '0')}`);
