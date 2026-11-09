@@ -2437,6 +2437,96 @@
    "key": "time_one",
    "language": "Marathi",
    "text": "बहुतेक अर्जदार हे साधारण {days} दिवसात दुरुस्त करतात."
+  },
+  {
+   "key": "subject:fix",
+   "language": "English",
+   "text": "Action needed on your Razorpay application"
+  },
+  {
+   "key": "subject:fix",
+   "language": "Hinglish",
+   "text": "Aapke Razorpay application par ek kaam baaki hai"
+  },
+  {
+   "key": "subject:fix",
+   "language": "Hindi",
+   "text": "आपके Razorpay आवेदन पर एक कदम बाकी है"
+  },
+  {
+   "key": "subject:fix",
+   "language": "Tamil",
+   "text": "உங்கள் Razorpay விண்ணப்பத்தில் ஒரு நடவடிக்கை தேவை"
+  },
+  {
+   "key": "subject:fix",
+   "language": "Kannada",
+   "text": "ನಿಮ್ಮ Razorpay ಅರ್ಜಿಯಲ್ಲಿ ಒಂದು ಕ್ರಮ ಬೇಕಾಗಿದೆ"
+  },
+  {
+   "key": "subject:fix",
+   "language": "Marathi",
+   "text": "तुमच्या Razorpay अर्जावर एक कृती बाकी आहे"
+  },
+  {
+   "key": "subject:resume",
+   "language": "English",
+   "text": "Finish your Razorpay application"
+  },
+  {
+   "key": "subject:resume",
+   "language": "Hinglish",
+   "text": "Apna Razorpay application poora karein"
+  },
+  {
+   "key": "subject:resume",
+   "language": "Hindi",
+   "text": "अपना Razorpay आवेदन पूरा करें"
+  },
+  {
+   "key": "subject:resume",
+   "language": "Tamil",
+   "text": "உங்கள் Razorpay விண்ணப்பத்தை முடிக்கவும்"
+  },
+  {
+   "key": "subject:resume",
+   "language": "Kannada",
+   "text": "ನಿಮ್ಮ Razorpay ಅರ್ಜಿಯನ್ನು ಪೂರ್ಣಗೊಳಿಸಿ"
+  },
+  {
+   "key": "subject:resume",
+   "language": "Marathi",
+   "text": "तुमचा Razorpay अर्ज पूर्ण करा"
+  },
+  {
+   "key": "subject:update",
+   "language": "English",
+   "text": "An update on your Razorpay application"
+  },
+  {
+   "key": "subject:update",
+   "language": "Hinglish",
+   "text": "Aapke Razorpay application ka update"
+  },
+  {
+   "key": "subject:update",
+   "language": "Hindi",
+   "text": "आपके Razorpay आवेदन के बारे में अपडेट"
+  },
+  {
+   "key": "subject:update",
+   "language": "Tamil",
+   "text": "உங்கள் Razorpay விண்ணப்பம் குறித்த தகவல்"
+  },
+  {
+   "key": "subject:update",
+   "language": "Kannada",
+   "text": "ನಿಮ್ಮ Razorpay ಅರ್ಜಿಯ ಕುರಿತು ಮಾಹಿತಿ"
+  },
+  {
+   "key": "subject:update",
+   "language": "Marathi",
+   "text": "तुमच्या Razorpay अर्जाबद्दल अपडेट"
   }
  ],
  "kw": [
@@ -2558,9 +2648,6 @@
   }
  ],
  "config": {
-  "USE_GEMINI": "Yes",
-  "GEMINI_MODEL": "gemini-3.5-flash-lite",
-  "NATIVE_REVIEW_LANGUAGES": "Tamil,Kannada,Marathi",
-  "PAUSE_MS_BETWEEN_AI_CALLS": 1500
+  "NATIVE_REVIEW_LANGUAGES": "Tamil,Kannada,Marathi"
  }
 }

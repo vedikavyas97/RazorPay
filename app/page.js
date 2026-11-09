@@ -1,16 +1,15 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
-
-const CSV_HEADERS = ['application_id', 'business_type', 'preferred_language', 'step_reached', 'expected_tpv_lakh', 'priority_rank',
-  'reason_code', 'diagnosed_cause', 'fixable', 'recoverable', 'route', 'channel', 'drafted_nudge', 'chars', 'safety_check',
-  'send_status', 'hold_reasons', 'code_source'];
+import { buildMetrics } from '../lib/metrics.js';
+import { toCsv, buildReport } from '../lib/report.js';
+import { METHOD } from '../lib/methodology.js';
 
 const STEPS = [
-  { n: 1, t: 'Read', d: 'Takes each stalled or rejected application from the data pack.' },
-  { n: 2, t: 'Diagnose', d: 'Rules find the cause. Blank codes are read from the reviewer text.' },
-  { n: 3, t: 'Draft', d: 'Picks a fixed template in the applicant’s language and channel.' },
-  { n: 4, t: 'Check, approve, send', d: 'Safety checks run. A person reads the draft, approves it and presses send.' },
+  { n: 1, t: 'Read', d: 'Takes each stalled or rejected application (75 of 100). Activated ones are skipped.' },
+  { n: 2, t: 'Diagnose', d: 'Rules find the cause and a confidence level. Blank codes are read from the reviewer text.' },
+  { n: 3, t: 'Prioritise and draft', d: 'Scores outreach priority, then picks a fixed template in the applicant’s language.' },
+  { n: 4, t: 'Check, review, send', d: 'Safety checks run. A person approves, edits or rejects each draft before anything is sent.' },
 ];
 
 const CODE_LABELS = {
@@ -20,6 +19,7 @@ const CODE_LABELS = {
   R13: 'Abandoned application',
 };
 
+const REVIEW_TYPES = ['Low-confidence diagnosis', 'Blank or ambiguous reviewer comment', 'Compliance escalation', 'Closure sign-off', 'Language review', 'Safety check failed'];
 const LANGS = ['English', 'Hinglish', 'Hindi', 'Tamil', 'Kannada', 'Marathi'];
 const STEP_NAMES = ['Business details', 'KYC docs', 'Bank verification', 'Website/App review'];
 const BLANK = { business_type: '', preferred_language: 'English', whatsapp_opted_in: 'Yes', step_reached: 'KYC docs', expected_monthly_tpv_inr_lakh: '', days_since_last_activity: '', rejection_code: '', rejection_message: '' };
@@ -30,11 +30,6 @@ const PRESETS = [
   ['Restricted category (R10)', { business_type: 'Private Limited', preferred_language: 'English', whatsapp_opted_in: 'Yes', step_reached: 'Website/App review', expected_monthly_tpv_inr_lakh: '30', days_since_last_activity: '3', rejection_code: 'R10', rejection_message: '' }],
   ['Unclear note', { business_type: 'LLP', preferred_language: 'English', whatsapp_opted_in: 'No', step_reached: 'KYC docs', expected_monthly_tpv_inr_lakh: '6', days_since_last_activity: '4', rejection_code: '', rejection_message: 'Something odd happened with my file' }],
 ];
-
-function toCsv(rows) {
-  const esc = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
-  return '﻿' + [CSV_HEADERS.join(','), ...rows.map((r) => CSV_HEADERS.map((h) => esc(r[h])).join(','))].join('\r\n');
-}
 
 function routeInfo(r) {
   if (r.reason_code === 'R13') return { label: 'Resume reminder', cls: 'nudge' };
@@ -53,7 +48,16 @@ export default function Home() {
   const [codeFilter, setCodeFilter] = useState('ALL');
   const [selected, setSelected] = useState(null);
   const [rerunning, setRerunning] = useState(false);
-  const [approved, setApproved] = useState({});
+  const [activated, setActivated] = useState(0);
+  const [aiConnected, setAiConnected] = useState(false);
+  const [view, setView] = useState('all');
+  const [reviewType, setReviewType] = useState('ALL');
+  const [prio, setPrio] = useState('ALL');
+  const [decisions, setDecisions] = useState({});
+  const [editing, setEditing] = useState(false);
+  const [editText, setEditText] = useState('');
+  const [editFails, setEditFails] = useState([]);
+  const [checking, setChecking] = useState(false);
   const [newApps, setNewApps] = useState([]);
   const [newIds, setNewIds] = useState([]);
   const [form, setForm] = useState(BLANK);
@@ -71,7 +75,7 @@ export default function Home() {
     setBusy(true); setError('');
     try {
       const j = await post('/api/run', { extra });
-      setResults(j.results); setNewIds(j.newIds || []); setLoaded(true);
+      setResults(j.results); setNewIds(j.newIds || []); setActivated(j.activated || 0); setAiConnected(!!j.aiConnected); setLoaded(true);
       setSelected((s) => s || (j.results[0] && j.results[0].application_id) || null);
       return true;
     } catch (e) { setError(String(e.message || e)); return false; }
@@ -98,33 +102,33 @@ export default function Home() {
     await run([]);
   }
 
-  async function rerun(id) {
-    setRerunning(true); setError('');
-    if (id.startsWith('NEW-')) { await run(); setRerunning(false); return; }
-    try {
-      const j = await post('/api/preview', { application_id: id });
-      setResults((rs) => rs.map((r) => (r.application_id === id ? { ...j.result, priority_rank: r.priority_rank } : r)));
-    } catch (e) { setError(String(e.message || e)); }
+  async function rerun() {
+    setRerunning(true);
+    await run();
     setRerunning(false);
   }
 
-  function download() {
-    const blob = new Blob([toCsv(results)], { type: 'text/csv;charset=utf-8' });
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob); a.download = 'onboarding_agent_output.csv'; a.click();
+  function setDecision(id, patch) { setDecisions((d) => ({ ...d, [id]: { ...(d[id] || {}), ...patch } })); }
+
+  async function saveEdit() {
+    setChecking(true); setEditFails([]);
+    try {
+      const j = await post('/api/check', { message: editText, subject: cur.email_subject, reason_code: cur.reason_code, preferred_language: cur.preferred_language, channel: cur.channel });
+      if (j.pass) { setDecision(cur.application_id, { message: editText, edited: true, safe: true, status: undefined }); setEditing(false); }
+      else setEditFails(j.fails);
+    } catch (e) { setEditFails([String(e.message || e)]); }
+    setChecking(false);
   }
 
-  const stats = useMemo(() => {
-    const rec = results.filter((r) => r.recoverable === 'Yes');
-    const tpv = rec.reduce((s, r) => s + (Number(r.expected_tpv_lakh) || 0), 0);
-    return {
-      total: results.length, recoverable: rec.length, tpv: tpv.toFixed(1),
-      close: results.filter((r) => r.reason_code === 'R10').length,
-      compliance: results.filter((r) => r.reason_code === 'R12').length,
-      pass: results.filter((r) => r.safety_check === 'PASS').length,
-      hold: results.filter((r) => r.send_status === 'HOLD').length,
-    };
-  }, [results]);
+  function save(text, type, name) {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name; a.click();
+  }
+  const download = () => save(toCsv(results), 'text/csv;charset=utf-8', 'onboarding_agent_output.csv');
+  const downloadReport = () => save(buildReport(results, activated), 'text/markdown;charset=utf-8', 'onboarding_agent_summary.md');
+
+  const M = useMemo(() => buildMetrics(results, activated), [results, activated]);
+  const reviewCounts = useMemo(() => Object.fromEntries(REVIEW_TYPES.map((t) => [t, results.filter((r) => r.reviews.some((x) => x.type === t)).length])), [results]);
 
   const codeCounts = useMemo(() => {
     const m = {};
@@ -132,20 +136,17 @@ export default function Home() {
     return Object.keys(m).sort().map((c) => [c, m[c]]);
   }, [results]);
 
-  const topCauses = useMemo(() => {
-    const m = {};
-    results.filter((r) => r.recoverable === 'Yes').forEach((r) => { m[r.reason_code] = (m[r.reason_code] || 0) + 1; });
-    return Object.entries(m).sort((a, b) => b[1] - a[1] || (a[0] < b[0] ? -1 : 1)).slice(0, 3);
-  }, [results]);
-
   const FILTERS = [
     ['ALL', 'All', results.length],
     ['READY', 'Ready', results.filter((r) => r.send_status !== 'HOLD').length],
-    ['HOLD', 'On hold', stats.hold],
-    ['Yes', 'Recoverable', stats.recoverable],
+    ['HOLD', 'On hold', M.humanReview],
+    ['Yes', 'Recoverable', M.recoverable],
     ['No', 'Not recoverable', results.filter((r) => r.recoverable !== 'Yes').length],
   ];
   const shown = results.filter((r) => {
+    if (view === 'review') return r.send_status === 'HOLD' && (reviewType === 'ALL' || r.reviews.some((x) => x.type === reviewType));
+    if (view === 'blocked') return r.priority === 'Not in outreach queue';
+    if (prio !== 'ALL' && r.priority !== prio) return false;
     if (codeFilter !== 'ALL' && r.reason_code !== codeFilter) return false;
     if (filter === 'ALL') return true;
     if (filter === 'HOLD') return r.send_status === 'HOLD';
@@ -155,14 +156,19 @@ export default function Home() {
   const cur = results.find((r) => r.application_id === selected) || null;
 
   // ---- send buttons are a demo: they show when sending would be allowed, but do nothing ----
-  let msg = '', optedIn = false, blocked = '', ok = false;
+  // Hard rules come first and cannot be overridden by approving.
+  let msg = '', optedIn = false, blocked = '', ok = false, dec = {}, hard = '', safe = false;
   if (cur) {
-    msg = cur.drafted_nudge;
+    dec = decisions[cur.application_id] || {};
+    msg = dec.message ?? cur.drafted_nudge;
+    safe = dec.edited ? !!dec.safe : cur.safety_check === 'PASS';
     optedIn = cur.channel.startsWith('WhatsApp');
-    if (cur.reason_code === 'R12') blocked = 'Compliance decides whether anything is sent for this case.';
-    else if (!cur.drafted_nudge) blocked = 'There is no message for this case. A person must review it.';
-    else if (cur.safety_check !== 'PASS') blocked = 'This message failed a safety check.';
-    else if (!approved[cur.application_id]) blocked = 'Tick the box to confirm you have read this message and approve it.';
+    if (cur.reason_code === 'R12') hard = 'Compliance decides whether anything is sent for this case. It cannot be sent from here.';
+    else if (!cur.drafted_nudge) hard = 'There is no message for this case. A person must review it.';
+    else if (!safe) hard = 'This message failed a safety check.';
+    if (hard) blocked = hard;
+    else if (dec.status === 'rejected') blocked = 'You rejected this message.';
+    else if (dec.status !== 'approved') blocked = 'Approve the message first.';
     ok = !blocked;
   }
   const ICONS = {
@@ -187,28 +193,51 @@ export default function Home() {
         </ol>
         </div>
         <aside className="hero">
-          <div className="hl">Recoverable volume</div>
-          <div className="hbig">{loaded ? `Rs ${stats.tpv} lakh` : '…'}<small> / month expected</small></div>
-          <div className="hsub">Applicants&apos; own estimate of monthly volume, in applications a nudge can bring back.</div>
+          <div className="hl">Expected monthly TPV · recoverable</div>
+          <div className="hbig">{loaded ? `Rs ${M.tpvRecoverable} lakh` : '…'}</div>
+          <div className="hsub">of Rs {M.tpvAll} lakh at stake across all {M.nonActivated} non-activated applications. Applicants&apos; own estimates, not realised volume and not Razorpay revenue.</div>
           <div className="hl hl2">Top causes · click to filter</div>
-          {topCauses.map(([c, n]) => (
-            <button key={c} className="crow" onClick={() => { setCodeFilter(c); setFilter('ALL'); }}>
-              <span className="cc">{c}</span><span className="cn">{CODE_LABELS[c] || c}</span><span className="ck">{n}</span>
+          {M.top.map((t) => (
+            <button key={t.code} className="crow" onClick={() => { setView('all'); setCodeFilter(t.code); setFilter('ALL'); setPrio('ALL'); }}>
+              <span className="cc">{t.code}</span><span className="cn">{CODE_LABELS[t.code] || t.cause}</span><span className="ck">{t.count}</span>
             </button>
           ))}
         </aside>
       </header>
 
       <section className="cards">
-        <div className="card c-blue"><b>{stats.total}</b><span>stalled or rejected applications</span></div>
-        <div className="card c-green"><b>{stats.recoverable}</b><span>recoverable with a nudge</span></div>
-        <div className="card c-gray"><b>{stats.close}</b><span>close politely (restricted)</span></div>
-        <div className="card c-purple"><b>{stats.compliance}</b><span>route to Compliance</span></div>
-        <div className="card c-green"><b>{stats.pass}/{stats.total}</b><span>passed every safety check</span></div>
-        <div className="card c-amber"><b>{stats.hold}</b><span>on hold for a human</span></div>
+        <div className="card c-blue"><b>{M.total}</b><span>total applications</span></div>
+        <div className="card c-gray"><b>{M.activated}</b><span>activated (not processed)</span></div>
+        <div className="card c-blue"><b>{M.nonActivated}</b><span>non-activated (processed)</span></div>
+        <div className="card c-amber"><b>{M.stalled}</b><span>stalled</span></div>
+        <div className="card c-gray"><b>{M.rejected}</b><span>rejected</span></div>
+        <div className="card c-green"><b>{M.recoverable}</b><span>recoverable with a nudge</span></div>
+        <div className="card c-gray"><b>{M.nonRecoverable}{M.unresolved ? ` + ${M.unresolved}?` : ''}</b><span>non-recoverable{M.unresolved ? ' (+ reason unidentified)' : ''}</span></div>
+        <div className="card c-amber"><b>{M.humanReview}</b><span>need human review</span></div>
+        <div className="card c-purple"><b>{M.compliance}</b><span>compliance escalations</span></div>
+        <div className="card c-blue"><b>Rs {M.tpvAll}</b><span>lakh TPV at stake, all non-activated</span></div>
+        <div className="card c-green"><b>Rs {M.tpvRecoverable}</b><span>lakh TPV, recoverable only</span></div>
+        <div className="card c-green"><b>{M.safetyPass}/{M.nonActivated}</b><span>passed every safety check</span></div>
       </section>
 
+      <section className="demo top3">
+        <h2>Top three systemic onboarding problems</h2>
+        <p className="note">Ranked by how many of the {M.nonActivated} non-activated applications have the cause. Counts come from the diagnoses above, not from estimates. The improvement ideas are the builder&apos;s suggestions, not part of the data pack.</p>
+        <div className="tablewrap"><table className="tbl"><thead><tr><th>#</th><th>Cause</th><th>Merchants</th><th>% of non-activated</th><th>Fixable</th><th>Suggested product / process improvement</th></tr></thead>
+          <tbody>{M.top.map((t, i) => (
+            <tr key={t.code}><td>{i + 1}</td><td><b>{t.code}</b> {t.cause}{t.code === 'R13' && <div className="note">No cause was recorded for these merchants.</div>}{t.tied.length > 0 && <div className="note">Tied on count with {t.tied.join(', ')}; ordered by TPV.</div>}</td>
+              <td>{t.count}</td><td>{t.pct}%</td><td>{t.fixable}</td><td>{t.suggestion}</td></tr>
+          ))}</tbody></table></div>
+      </section>
+
+      <div className="tabs" role="tablist">
+        {[['all', 'All applications', M.nonActivated], ['review', 'Human review queue', M.humanReview], ['blocked', 'No normal outreach', M.priority['Not in outreach queue']]].map(([k, l, n]) => (
+          <button key={k} role="tab" aria-selected={view === k} className={`tab ${view === k ? 'on' : ''}`} onClick={() => { setView(k); setSelected(null); }}>{l} <i>{n}</i></button>
+        ))}
+      </div>
+
       <div className="bar">
+        {view === 'all' && (
         <div className="pills">
           {FILTERS.map(([k, l, n]) => (
             <button key={k} className={`pill ${filter === k ? 'on' : ''}`} onClick={() => setFilter(k)}>{l} <i>{n}</i></button>
@@ -217,10 +246,24 @@ export default function Home() {
             <option value="ALL">All reason codes</option>
             {codeCounts.map(([c, n]) => <option key={c} value={c}>{c} · {CODE_LABELS[c] || c} ({n})</option>)}
           </select>
-        </div>
+          <select aria-label="Filter by priority" value={prio} onChange={(e) => setPrio(e.target.value)}>
+            <option value="ALL">All priorities</option>
+            {['High', 'Medium', 'Low', 'Not in outreach queue'].map((t) => <option key={t} value={t}>{t} ({M.priority[t]})</option>)}
+          </select>
+        </div>)}
+        {view === 'review' && (
+        <div className="pills">
+          <select aria-label="Filter by review type" value={reviewType} onChange={(e) => setReviewType(e.target.value)}>
+            <option value="ALL">All review types</option>
+            {REVIEW_TYPES.map((t) => <option key={t} value={t}>{t} ({reviewCounts[t]})</option>)}
+          </select>
+          <span className="note">Each case shows why a person has to step in.</span>
+        </div>)}
+        {view === 'blocked' && <span className="note">Restricted-category, compliance, unresolved and non-recoverable cases never receive a normal recovery nudge.</span>}
         <div className="actions">
           <button onClick={() => run()} disabled={busy}>{busy ? 'Running…' : 'Run agent again'}</button>
-          <button className="alt" onClick={download} disabled={!results.length}>Download CSV</button>
+          <button className="alt" onClick={download} disabled={!results.length}>Download CSV ({results.length})</button>
+          <button className="alt" onClick={downloadReport} disabled={!results.length}>Download summary report</button>
         </div>
       </div>
       {error && <div className="err">{error}</div>}
@@ -233,7 +276,8 @@ export default function Home() {
             return (
               <button key={r.application_id} className={`item ${selected === r.application_id ? 'sel' : ''}`} onClick={() => setSelected(r.application_id)}>
                 <div className="l1"><b>{r.application_id}</b><span className="lang">{r.preferred_language}{newIds.includes(r.application_id) && <em className="newtag">New</em>}</span><span className={`chip ${r.send_status === 'HOLD' ? 'hold' : 'ready'}`}>{r.send_status === 'HOLD' ? 'On hold' : 'Ready'}</span></div>
-                <div className="l2"><span className={`code ${ri.cls}`}>{r.reason_code}</span><span className="cause">{r.diagnosed_cause}</span></div>
+                <div className="l2"><span className={`code ${ri.cls}`}>{r.reason_code}</span><span className="cause">{r.diagnosed_cause}</span><span className={`prio p-${r.priority.split(' ')[0]}`}>{r.priority === 'Not in outreach queue' ? 'No outreach' : r.priority}</span></div>
+                {view === 'review' && <div className="why">{r.reviews.map((x) => x.type).join(' · ')}</div>}
               </button>
             );
           })}
@@ -250,25 +294,47 @@ export default function Home() {
               </div>
               <div className="facts">
                 <div><span>Diagnosis</span><b>{cur.reason_code}: {cur.diagnosed_cause}</b></div>
+                <div><span>Confidence</span><b>{cur.confidence} <small className="note">({cur.code_source})</small></b></div>
                 <div><span>Fixable / recoverable</span><b>{cur.fixable} / {cur.recoverable}</b></div>
                 <div><span>Action</span><b className={`code-text ${routeInfo(cur).cls}`}>{routeInfo(cur).label}</b></div>
+                <div><span>Escalation or closure</span><b>{cur.escalation}</b></div>
+                <div><span>Outreach priority</span><b>{cur.priority}{cur.priority_rank ? ` · #${cur.priority_rank} in queue` : ''}</b></div>
                 <div><span>Channel</span><b>{optedIn ? 'WhatsApp (opted in), SMS fallback' : 'SMS / Email (not opted in to WhatsApp)'}</b></div>
-                <div><span>Expected TPV · priority</span><b>Rs {cur.expected_tpv_lakh} lakh · {cur.priority_rank ? `#${cur.priority_rank}` : 'n/a'}</b></div>
+                <div><span>Expected TPV (applicant estimate)</span><b>Rs {cur.expected_tpv_lakh} lakh · {cur.days_inactive} days inactive</b></div>
                 <div><span>Safety check</span><b className={cur.safety_check === 'PASS' ? 'pass' : 'fail'}>{cur.safety_check}</b></div>
-                <div><span>Code source</span><b>{cur.code_source}</b></div>
+                <div className="wide"><span>Recommended corrective action</span><b>{cur.recommended_action}</b></div>
+                <div className="wide"><span>Why this priority</span><b className="small">{cur.priority_reason}</b></div>
               </div>
-              {cur.hold_reasons && <div className="holdbox"><b>Held because:</b> {cur.hold_reasons}. Reading and approving the message below is the sign-off.</div>}
-              <div className="msglabel">Drafted message ({optedIn ? 'WhatsApp' : 'SMS / email'} preview)</div>
-              <div className={`bubble ${optedIn ? 'wa' : 'sms'}`}>{msg || '(no message: a human must review this case)'}</div>
-
-              <label className="approve"><input type="checkbox" disabled={cur.reason_code === 'R12' || !cur.drafted_nudge} checked={!!approved[cur.application_id]} onChange={(e) => setApproved((a) => ({ ...a, [cur.application_id]: e.target.checked }))} /> I have read this message and approve sending it</label>
+              {cur.reviews.length > 0 && (
+                <div className="holdbox"><b>A person has to step in:</b>
+                  <ul>{cur.reviews.map((x) => <li key={x.type}><b>{x.type}.</b> {x.why}</li>)}</ul>
+                  Approving a message never overrides the hard rules below.</div>
+              )}
+              {cur.email_subject && <div className="msglabel">Email subject: <b>{cur.email_subject}</b></div>}
+              <div className="msglabel">Drafted message ({optedIn ? 'WhatsApp' : 'SMS / email'} preview){dec.edited ? ' · edited by reviewer' : ''}</div>
+              {!editing && <div className={`bubble ${optedIn ? 'wa' : 'sms'}`}>{msg || '(no message: a human must review this case)'}</div>}
+              {editing && (
+                <div className="editbox">
+                  <textarea value={editText} maxLength={1500} onChange={(e) => setEditText(e.target.value)} />
+                  {editFails.length > 0 && <div className="err">Safety check failed: {editFails.join('; ')}. Fix the message to save it.</div>}
+                  <div className="decide"><button onClick={saveEdit} disabled={checking}>{checking ? 'Checking…' : 'Check and save edit'}</button><button className="alt" onClick={() => { setEditing(false); setEditFails([]); }}>Cancel</button></div>
+                </div>
+              )}
+              {!editing && (
+                <div className="decide">
+                  <button className="approve-btn" disabled={!!hard || dec.status === 'approved'} title={hard} onClick={() => setDecision(cur.application_id, { status: 'approved' })}>{dec.status === 'approved' ? 'Approved' : 'Approve'}</button>
+                  <button className="alt" disabled={!!hard && !(cur.drafted_nudge && cur.reason_code !== 'R12')} title={cur.reason_code === 'R12' ? 'Compliance cases cannot be edited here.' : ''} onClick={() => { setEditText(msg); setEditFails([]); setEditing(true); }}>Edit</button>
+                  <button className="alt reject-btn" disabled={!cur.drafted_nudge && cur.reason_code !== 'UNKNOWN'} onClick={() => setDecision(cur.application_id, { status: 'rejected' })}>{dec.status === 'rejected' ? 'Rejected' : 'Reject'}</button>
+                  <span className="note">{dec.status === 'approved' ? 'Approved by reviewer.' : dec.status === 'rejected' ? 'Rejected: will not be sent.' : 'Not reviewed yet.'}</span>
+                </div>
+              )}
               <div className="sendrow">
                 <SendBtn id="wa" label="WhatsApp" extraOff={!optedIn && cur.reason_code !== 'R12' ? 'This applicant has not opted in to WhatsApp. Use SMS or email.' : ''} />
                 <SendBtn id="sms" label="SMS" />
                 <SendBtn id="mail" label="Email" />
               </div>
               <div className="note sendnote">{blocked ? `Send buttons are off: ${blocked}` : 'Sending switches on once contact details are connected. Nothing is sent from this page.'}</div>
-              <button className="alt" onClick={() => rerun(cur.application_id)} disabled={rerunning}>{rerunning ? 'Running…' : 'Re-run agent on this application'}</button>
+              <button className="alt" onClick={rerun} disabled={rerunning}>{rerunning ? 'Running…' : 'Re-run agent'}</button>
             </>
           )}
         </aside>
@@ -299,7 +365,18 @@ export default function Home() {
         </form>
       </section>
 
-      <footer className="note">Limits: all data is synthetic. No AI model is used in this app; every decision comes from rules you can read. [resume link] marks where the real link goes once the system sends the message. Added applications are not saved; they disappear when you reload. Tamil, Kannada and Marathi wording needs a native-speaker review. 21 of 75 rows have inactivity days longer than days since signup (used as given). The email subject is the same English line for every language.</footer>
+      <details className="demo method">
+        <summary><b>How decisions are made: rules vs AI</b> <span className={`badge ${aiConnected ? '' : 'off'}`}>AI model connected: {aiConnected ? 'yes' : 'no'}</span></summary>
+        <p className="note">Everything below the line runs as plain code today. The model hook is in lib/llm.js and is empty.</p>
+        <div className="mcols">
+          <div><h3>Rule-based (running now)</h3><ul>{METHOD.rules.map((x) => <li key={x}>{x}</li>)}</ul></div>
+          <div><h3>AI-assisted (not connected)</h3><ul>{METHOD.ai.map((x) => <li key={x}>{x}</li>)}</ul>
+            <h3>Diagnosis confidence</h3><ul>{METHOD.confidence.map((x) => <li key={x}>{x}</li>)}</ul>
+            <h3>Outreach priority</h3><ul>{METHOD.priority.map((x) => <li key={x}>{x}</li>)}</ul></div>
+        </div>
+      </details>
+
+      <footer className="note">Limits: all data is synthetic. No AI model is used in this app; every decision comes from rules you can read. [resume link] marks where the real link goes once the system sends the message. Tamil, Kannada and Marathi wording and subjects have not been checked by a native speaker. 21 of 75 rows have inactivity days longer than days since signup (used as given). Keyword rules were written after seeing the coded notes. Priority weights are the builder&apos;s judgment. Added applications and reviewer decisions are not saved; they disappear when you reload.</footer>
     </main>
   );
 }

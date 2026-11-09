@@ -2,23 +2,32 @@
 
 Razorpay Campus AI Build-a-thon, Problem 3 (merchant onboarding and KYC drop-off recovery). Synthetic data only.
 
-For each stalled or rejected application the agent:
+An internal tool for Razorpay's onboarding team. For each of the 75 non-activated applications (the 25 activated ones are skipped) it:
 
-1. Diagnoses the cause. It uses the rejection code if there is one, reads the reviewer text with keyword rules if the code is blank, and treats a missing rejection as an abandoned application (R13).
-2. Looks up fixable / recoverable in the rejection catalog. Restricted category (R10) is closed politely. A screening hit (R12) is routed to Compliance. Neither gets a workaround or a reason.
-3. Picks the channel (WhatsApp only if the applicant opted in).
-4. Drafts the nudge in the applicant's language from fixed templates (`data/agentData.json`).
-5. Runs safety checks (no screening wording, no workarounds, no promises, right language script, WhatsApp opt-in) and marks each draft READY or HOLD.
+1. **Diagnoses** the cause with a confidence level. A code in the data is used as given (High). A blank code with a reviewer note is read by keyword rules and marked inferred (Medium, always confirmed by a person). No code and no note is an abandoned application, R13, with no cause invented. A note no rule matches is UNKNOWN (Low): no reason is claimed, no message is drafted, a person decides.
+2. **Looks up** fixable / recoverable and the standard fix in the rejection catalog. R10 (restricted category) is closed politely with no workaround. R12 (screening) goes to Compliance with generic wording only.
+3. **Prioritises** recoverable cases High / Medium / Low from TPV, days inactive, fix clarity and stage reached (not TPV alone), with the reasons shown. R10, R12, unresolved and non-recoverable cases never enter the outreach queue.
+4. **Drafts** the message and the email subject in the applicant's language from fixed templates. WhatsApp is offered only if the applicant opted in.
+5. **Checks** every message and subject (no screening wording, no workarounds, no promises, right script, consent) and sets READY or HOLD.
+6. **Human review.** A review queue lists every case a person must step in on, with the reason. The reviewer can approve, edit or reject a message. Edits are re-checked by the same safety rules. Approving never overrides the hard rules: Compliance cases cannot be sent from the app, and a message that fails a check cannot be approved.
 
-New applications can be added from the form on the page (not saved between sessions) and go through the same steps.
+Nothing is sent. The send buttons are a demo (the data has no phone numbers or email addresses).
 
-Nothing is sent automatically. A person reads each draft, approves it and presses send. Cases for Compliance (R12) cannot be sent from the app.
+The page also has a management dashboard (counts, TPV at stake vs recoverable TPV, top three causes), a form to add new applications for the session, a CSV of all 75 rows, and a summary report (top causes, review list, no-nudge list, methodology). The page, CSV and report use the same functions, so the numbers match.
 
 ## What is AI and what is not
 
-- Rules, no AI: diagnosis, fixable / recoverable, closure and compliance handling, channel, safety checks, hold decisions.
-- AI in the running app: none. Every decision comes from rules and templates you can read.
-- The message templates were drafted with Claude and spot-checked by the builder.
+- **No AI model is connected.** Everything runs as plain code: code mapping, fixable / recoverable, R10 and R12 handling, WhatsApp consent, eligibility, priority, safety checks, approval rules, reading blank-code notes (keyword rules) and drafting (fixed templates).
+- The message templates were drafted with Claude beforehand and are fixed text.
+- `lib/llm.js` is an empty, documented hook. A model could later interpret notes that no rule matched and add explanations or drafts, but its answers would always be Low confidence and go to a person, and could never override the rule-based decisions.
+
+## Tests
+
+```
+npm test
+```
+
+Runs 32 specific cases and 19 full-dataset checks and writes `TEST_REPORT.md`. Expectations come from the data pack and the brief, not from the agent's own functions. Read the limits in that file before quoting the results.
 
 ## Run locally
 
@@ -31,15 +40,14 @@ Open http://localhost:3000
 
 ## Deploy
 
-1. Push this folder to a GitHub repository.
-2. In Vercel: Add New > Project > import the repository. Framework: Next.js (detected automatically).
-3. Deploy. No environment variables or API keys are needed.
+Push to GitHub and import the repository in Vercel (Next.js is detected). No environment variables or API keys are needed.
 
 ## Known limits
 
 - `[resume link]` is a placeholder. The data has no real links or contact details.
-- Tamil, Kannada and Marathi wording has not been read by a native speaker.
+- Tamil, Kannada and Marathi wording and subject lines have not been read by a native speaker. Those messages are held.
 - 21 of 75 non-activated rows have `days_since_last_activity` larger than the days since signup. The field is used as given.
-- The keyword rules were written after seeing the 49 coded messages, so matching all 49 is not an independent test.
-- The send buttons are a demo and do nothing. The data has no phone numbers or email addresses, so nothing is sent.
-- Applications added through the form live in the browser session only; there is no database.
+- The keyword rules were written after seeing the coded notes, so matching them is not an independent test. They take the first matching rule, so a note naming two problems is drafted for one.
+- Priority weights and cut-offs are judgment calls, not from the data pack. TPV is the applicant's own estimate, not realised volume or revenue.
+- Added applications and reviewer decisions live in the browser session only. There is no database.
+- The Google Sheet / Apps Script version is a separate copy and was not updated.

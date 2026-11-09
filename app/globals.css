@@ -92,3 +92,26 @@ select { font:inherit; font-size:13px; padding:5px 10px; border:1px solid var(--
 .nform .wide { grid-column:1 / -1; }
 .nform textarea { margin-top:0; }
 .nform .row { display:flex; gap:8px; flex-wrap:wrap; }
+
+.tabs { display:flex; gap:6px; margin:6px 0 12px; border-bottom:1px solid var(--line); flex-wrap:wrap; }
+.tab { background:transparent; color:var(--muted); border-radius:8px 8px 0 0; padding:8px 14px; border-bottom:2px solid transparent; }
+.tab i { font-style:normal; margin-left:6px; font-size:12px; background:#e9edf3; color:var(--ink); border-radius:10px; padding:0 7px; }
+.tab.on { color:var(--brand); font-weight:600; border-bottom-color:var(--brand); }
+.prio { font-size:11px; border-radius:8px; padding:0 7px; flex:none; margin-left:auto; }
+.p-High { background:#fde2e2; color:#8a1f1f; } .p-Medium { background:#fff0cc; color:var(--warn); } .p-Low { background:#e8eef6; color:#40566f; } .p-Not { background:#eceff3; color:#6b7684; }
+.why { font-size:11px; color:var(--warn); margin-top:2px; }
+.facts .wide { grid-column:1 / -1; }
+.facts b.small { font-size:12px; font-weight:400; color:var(--muted); }
+.holdbox ul { margin:4px 0 6px; padding-left:18px; }
+.decide { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:0 0 12px; }
+.approve-btn { background:var(--ok); } .reject-btn { color:var(--bad); border-color:var(--bad); }
+.editbox textarea { min-height:140px; margin:0 0 8px; }
+.top3 { margin-top:0; margin-bottom:14px; }
+.tablewrap { overflow-x:auto; }
+.tbl { width:100%; border-collapse:collapse; font-size:13px; margin-top:8px; }
+.tbl th { text-align:left; font-size:11px; text-transform:uppercase; letter-spacing:.4px; color:var(--muted); padding:6px 8px; border-bottom:1px solid var(--line); }
+.tbl td { padding:8px; border-bottom:1px solid var(--line); vertical-align:top; }
+.method summary { cursor:pointer; }
+.method .badge { margin-left:8px; } .badge.off { background:#fdecec; color:var(--bad); }
+.mcols { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:16px; }
+.method h3 { font-size:13px; margin:10px 0 4px; } .method li { font-size:13px; margin-bottom:3px; }
